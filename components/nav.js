@@ -1,56 +1,103 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Logo from "./logo";
 
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' }
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
+const Nav = () => {
+  const clickHandler = id => {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  };
+  return (
+    <div className="nav">
+      <div className="logo el" onClick={() => clickHandler("top")}>
+        <Logo size="60" />
+      </div>
+      <div className="buttonContainer el">
+        <div className="button" onClick={() => clickHandler("test")}>
+          Projects
+        </div>
+        <div className="button">About Me</div>
 
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href='/'>
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
+        <div className="button">Contact</div>
+      </div>
 
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
-)
+      <style jsx>{`
+        :global(body) {
+          margin: 0;
+          font-family: Helvetica, sans-serif;
+          // height: 15000px;
+          // background: grey;
+        }
 
-export default Nav
+        .nav {
+          width: 100%;
+          height: 60px;
+          display: flex;
+          background: white;
+          position: fixed;
+          z-index: 2;
+        }
+
+        .el {
+          flex: 1;
+          display: flex;
+        }
+
+        .button {
+          font-size: 22px;
+          display: flex;
+          position: relative;
+          align-items: center;
+          height: 100%;
+          min-width: 95px;
+          margin: 0 20px;
+        }
+
+        .logo {
+          align-items: center;
+        }
+
+        .buttonContainer {
+          justify-content: flex-end;
+        }
+
+        .button::after {
+          position: absolute;
+          content: "";
+          left: -15%;
+          width: 0;
+          height: calc(100% - 4px);
+          border-bottom: 3px solid black;
+          transition: width 0.15s ease;
+        }
+
+        .button:hover::after {
+          width: 130%;
+        }
+
+        @media all and (min-width: 1000px) {
+          .logo::before {
+            content: "";
+            flex: 1;
+          }
+        }
+
+        @media all and (max-width: 700px) {
+          .buttonContainer {
+            display: none;
+          }
+
+          .logo::before {
+            content: "";
+            flex: 1;
+          }
+
+          .logo::after {
+            content: "";
+            flex: 1;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default Nav;
