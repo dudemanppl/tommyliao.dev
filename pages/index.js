@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Nav from "../components/nav";
+import Splash from "../components/Splash/splash";
 
 const Home = () => (
   <div>
@@ -15,12 +16,19 @@ const Home = () => (
 
     <Nav />
 
-    <div className="hero" id="top" />
-    <div id="test">test</div>
+    <div id="top">
+      <Splash />
+    </div>
+
+    <div className="test">test</div>
 
     <style jsx>{`
-      .hero {
+      .test {
+        top: 860px;
         height: 2000px;
+        background: grey;
+        z-index: 1;
+        position: relative;
       }
     `}</style>
   </div>
