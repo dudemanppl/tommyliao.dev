@@ -8,6 +8,12 @@ const Inset = () => {
         <div className="name">Tommy Liao</div>
         <div className="bio">Full Stack Developer</div>
         <Icons />
+        <a
+          className="resume"
+          href="https://dudemanppl.s3-us-west-1.amazonaws.com/resume.pdf"
+        >
+          Resume
+        </a>
       </div>
       <style jsx>{`
         img {
@@ -17,14 +23,22 @@ const Inset = () => {
           width: 50%;
           border-radius: 50%;
           border: solid white 5px;
-          box-shadow: 0px 0px 15px grey;
+          box-shadow: 0px 0px 15px rgb(200, 200, 200);
+        }
+
+        a {
+          color: black;
+          text-decoration: none;
+        }
+        .resume {
+          font-size: 30px;
+          font-weight: bold;
         }
         .name {
           font-weight: bold;
           font-style: italic;
           font-size: 60px;
         }
-
         .bio {
           font-size: 20px;
           margin-bottom: 10px;
@@ -33,25 +47,30 @@ const Inset = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          height: 80%;
-          width: 100%;
+          height: 500px;
+          width: 500px;
           background: rgb(250, 250, 250);
+          box-shadow: 20px 20px 30px rgb(11, 104, 133);
         }
         .inset {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          top: 50px;
         }
         @media (min-width: 700px) {
-          .insetContainer {
-            border-radius: 10px;
-            box-shadow: 0px 0px 60px rgb(11, 104, 133);
-            min-width: 600px;
-            width: 50%;
+          .resume {
+            display: none;
           }
         }
-
+        @media (max-width: 700px) {
+          .insetContainer {
+            width: 100%;
+            height: 600px;
+            box-shadow: 0 20px 30px rgb(11, 104, 133);
+          }
+        }
         @media (max-width: 350px) {
           .name {
             font-size: 50px;

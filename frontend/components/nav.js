@@ -23,12 +23,7 @@ const Nav = () => {
       </div>
 
       <style jsx>{`
-        @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700i&display=swap");
 
-        :global(body) {
-          margin: 0;
-          font-family: "Open Sans", sans-serif;
-        }
 
         a {
           color: black;
@@ -86,7 +81,7 @@ const Nav = () => {
           width: 130%;
         }
 
-        @media (max-width: 1400px) and (min-width: 700px) {
+        @media (max-width: 1400px) {
           .logo {
             left: 30px;
           }
@@ -94,6 +89,9 @@ const Nav = () => {
 
         @media (max-width: 700px) {
           .buttonContainer {
+            display: none;
+          }
+          .nav {
             display: none;
           }
         }
