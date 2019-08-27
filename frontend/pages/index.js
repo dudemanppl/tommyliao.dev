@@ -9,12 +9,14 @@ const Home = () => {
 
   const scrollHandler = () => {
     const scrollHeight = window.pageYOffset;
-    console.log(section);
-    console.log(scrollHeight);
-    if (scrollHeight <= 799) {
-      setSection("");
-    } else if (scrollHeight < 1200) {
+    if (scrollHeight >= 800 && scrollHeight < 1200) {
       setSection("Projects");
+    } else if (scrollHeight >= 1200 && scrollHeight < 1600) {
+      setSection("About Me");
+    } else if (scrollHeight >= 1600) {
+      setSection("Contact");
+    } else {
+      setSection("");
     }
   };
 

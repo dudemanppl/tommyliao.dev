@@ -13,19 +13,16 @@ const Nav = ({ section }) => {
     const classAdder = id => {
       document.getElementById(id).classList.add("current");
     };
-    switch (section) {
-      case "Projects":
-        classAdder("projectsButton");
-        break;
-      case "About Me":
-        classAdder("aboutmeButton");
-        break;
-      case "Contact":
-        classAdder("contactButton");
-      default:
-        [...document.getElementsByClassName("button")].forEach(button => {
-          button.classList.remove("current");
-        });
+    [...document.getElementsByClassName("button")].forEach(button => {
+      button.classList.remove("current");
+    });
+
+    if (section === "Projects") {
+      classAdder("projectsButton");
+    } else if (section === "About Me") {
+      classAdder("aboutmeButton");
+    } else if (section === "Contact") {
+      classAdder("contactButton");
     }
   }, [section]);
 
