@@ -27,7 +27,7 @@ const Splash = () => {
               rgb(63, 168, 200) 90%
             );
 
-            height: 800px;
+            height: calc(100vh - 60px);
           }
           @media (max-width: 700px) {
             .splash {
