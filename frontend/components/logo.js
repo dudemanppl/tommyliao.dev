@@ -1,7 +1,7 @@
 import React from "react";
 
 const Logo = ({ size }) => (
-  <svg height={size} width={size}>
+  <svg className="logo" height={size} width={size}>
     <rect
       y="calc(100%/15 * 1)"
       width="100%"
@@ -51,8 +51,11 @@ const Logo = ({ size }) => (
       style={{ fill: "#DDDDDD" }}
     />
     <style jsx>{`
-      .hero {
-        height: 2000px;
+      .logo {
+        transition: opacity 0.2s;
+      }
+      .logo:hover {
+        opacity: 0.7;
       }
     `}</style>
   </svg>

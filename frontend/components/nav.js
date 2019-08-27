@@ -1,19 +1,55 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Logo from "./logo";
 
-const Nav = () => {
-  const clickHandler = id => {
+const Nav = ({ section }) => {
+  // scrolls to section and adds conditional styling to button
+  const clickHandler = (event, id) => {
+    event.target.classList.add("current");
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   };
+
+  // conditionally renders styling for buttons
+  useEffect(() => {
+    const classAdder = id => {
+      document.getElementById(id).classList.add("current");
+    };
+    switch (section) {
+      case "Projects":
+        classAdder("projectsButton");
+        break;
+      case "About Me":
+        classAdder("aboutmeButton");
+        break;
+      case "Contact":
+        classAdder("contactButton");
+      default:
+        [...document.getElementsByClassName("button")].forEach(button => {
+          button.classList.remove("current");
+        });
+    }
+  }, [section]);
+
   return (
     <div className="nav">
-      <div className="logo" onClick={() => clickHandler("top")}>
+      <div id="logo" className="logo" onClick={e => clickHandler(e, "Splash")}>
         <Logo size="60" />
       </div>
+
       <div className="buttonContainer">
-        <div className="button">Projects</div>
-        <div className="button">About Me</div>
-        <div className="button">Contact</div>
+        {["Projects", "About Me", "Contact"].map((label, i) => {
+          return (
+            <div
+              key={label + i}
+              id={`${label.replace(/\s/g, "").toLowerCase()}Button`}
+              className="button"
+              onClick={e => {
+                clickHandler(e, label);
+              }}
+            >
+              {label}
+            </div>
+          );
+        })}
         <a
           className="button"
           href="https://dudemanppl.s3-us-west-1.amazonaws.com/resume.pdf"
@@ -23,8 +59,6 @@ const Nav = () => {
       </div>
 
       <style jsx>{`
-
-
         a {
           color: black;
           text-decoration: none;
@@ -60,7 +94,8 @@ const Nav = () => {
           margin: 0 20px;
         }
 
-        .button:hover {
+        .button:hover,
+        .button.current {
           color: #3b3b3b;
           font-weight: bold;
           transition: color 0.3s;
@@ -77,7 +112,8 @@ const Nav = () => {
           transition: width 0.15s;
         }
 
-        .button:hover::after {
+        .button:hover::after,
+        .button.current::after {
           width: 130%;
         }
 

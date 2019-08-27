@@ -70,11 +70,11 @@ const Icons = () => {
           height: 40px;
           width: 40px;
           margin: 5px;
+          transition: opacity 0.2s;
         }
 
         .icon:hover {
           opacity: 0.75;
-          transition: opacity 0.2s;
         }
 
         .github:hover {

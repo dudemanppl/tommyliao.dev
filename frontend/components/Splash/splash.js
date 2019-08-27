@@ -2,13 +2,14 @@ import React from "react";
 import Inset from "./inset";
 
 const Splash = () => {
+  // const
   return (
     <div className="splash">
       <Inset />
       <style jsx>
         {`
           .splash {
-            position: absolute;
+            position: relative;
             z-index: 1;
             top: 60px;
             width: 100%;
@@ -31,7 +32,6 @@ const Splash = () => {
           @media (max-width: 700px) {
             .splash {
               top: 0;
-              // position: absolute;
             }
           }
         `}
