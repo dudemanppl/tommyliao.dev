@@ -1,6 +1,6 @@
 import React from "react";
 import Inset from "./inset";
-import projects from "../../../dummy";
+import projects from "../../dummy";
 
 const Projects = () => {
   return (
@@ -23,19 +23,12 @@ const Projects = () => {
             overflow-x: auto;
             height: calc(100vh - 60px);
             width: 100%;
-            // -webkit-overflow-scrolling: touch;
-            // scroll-snap-type: x mandatory;
-            // scroll-behavior: smooth;
-            // overflow: -moz-scrollbars-none;
+            overflow: -moz-scrollbars-none;
           }
 
           .projects::-webkit-scrollbar {
             width: 0 !important;
             height: 0;
-          }
-
-          .projects > div {
-            scroll-snap-align: start;
           }
 
           .project {

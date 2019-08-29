@@ -13,17 +13,19 @@ const Home = () => {
   const scrollHandler = () => {
     const scrollHeight = window.pageYOffset;
     const { innerHeight } = window;
+    console.log("scrollheight" + scrollHeight);
+    console.log("innerheight" + (innerHeight * 4 - 240));
     if (
       scrollHeight >= innerHeight - 60 &&
-      scrollHeight < innerHeight * 2 - 60
+      scrollHeight < innerHeight * 2 - 120
     ) {
       setSection("Projects");
     } else if (
-      scrollHeight >= innerHeight * 2 - 60 &&
-      scrollHeight < innerHeight * 3 - 60
+      scrollHeight >= innerHeight * 2 - 120 &&
+      scrollHeight < innerHeight * 3 - 180
     ) {
-      setSection("About Me");
-    } else if (scrollHeight >= innerHeight * 4 - 60) {
+      setSection("AboutMe");
+    } else if (scrollHeight >= innerHeight * 3 - 180) {
       setSection("Contact");
     } else {
       setSection("");
@@ -56,15 +58,14 @@ const Home = () => {
 
       <div id="Projects" className="projects">
         <Projects />
+        <ScrollButtons
+          projCount={projCount}
+          currIdx={currIdx}
+          setCurrIdx={setCurrIdx}
+        />
       </div>
 
-      <ScrollButtons
-        projCount={projCount}
-        currIdx={currIdx}
-        setCurrIdx={setCurrIdx}
-      />
-
-      <div id="About Me"></div>
+      <div id="AboutMe"></div>
 
       <style jsx>{`
         /* latin-ext */
@@ -122,19 +123,6 @@ const Home = () => {
           font-family: "Open Sans", sans-serif;
           background: grey;
         }
-
-        .home {
-          scroll-snap-type: both proximity;
-          height: 10000px;
-        }
-        .splash {
-          scroll-snap-align: center;
-        }
-
-        // .home {
-        //   display: flex;
-        //   flex-direction: column;
-        // }
       `}</style>
     </div>
   );

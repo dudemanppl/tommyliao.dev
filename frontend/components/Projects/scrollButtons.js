@@ -5,9 +5,10 @@ const ScrollButtons = ({ projCount, currIdx, setCurrIdx }) => {
   let next = currIdx + 1 > projCount ? 0 : currIdx + 1;
 
   const clickHandler = (id, direction) => {
-    document
-      .getElementById(id)
-      .scrollIntoView({ behavior: "smooth", block: "nearest" });
+    document.getElementById(id).scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
 
     if (direction === "last") {
       setCurrIdx(last);
@@ -24,16 +25,18 @@ const ScrollButtons = ({ projCount, currIdx, setCurrIdx }) => {
           clickHandler("project" + last, "last");
         }}
       >{`<`}</div>
+
       <div
         className="scrollNext"
         onClick={() => clickHandler("project" + next, "next")}
       >{`>`}</div>
+
       <style jsx>{`
         .scrollButtons {
           position: relative;
           top: calc(-1 * 100vh + 60px);
           width: 100%;
-          height: calc(100vh);
+          height: 100vh;
           display: flex;
           justify-content: space-between;
           align-items: center;

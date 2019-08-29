@@ -33,21 +33,28 @@ const Nav = ({ section }) => {
       </div>
 
       <div className="buttonContainer">
-        {["Projects", "About Me", "Contact"].map((label, i) => {
-          const noSpace = label.replace(/\s/g, "");
-          return (
-            <div
-              key={label + i}
-              id={`${noSpace.toLowerCase()}Button`}
-              className="button"
-              onClick={e => {
-                clickHandler(e, noSpace);
-              }}
-            >
-              {label}
-            </div>
-          );
-        })}
+        <div
+          id="projectsButton"
+          className="button"
+          onClick={e => {
+            clickHandler(e, "Projects");
+          }}
+        >
+          Projects
+        </div>
+        <div
+          id="aboutmeButton"
+          className="button"
+          onClick={e => {
+            clickHandler(e, "AboutMe");
+          }}
+        >
+          About Me
+        </div>
+        <div id="contactButton" className="button">
+          Contact{" "}
+        </div>
+
         <a
           className="button"
           href="https://dudemanppl.s3-us-west-1.amazonaws.com/resume.pdf"
