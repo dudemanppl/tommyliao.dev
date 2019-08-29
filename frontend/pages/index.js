@@ -3,10 +3,12 @@ import Head from "next/head";
 import Nav from "../components/nav";
 import Splash from "../components/Splash/splash";
 import Projects from "../components/Projects/projects";
+import ScrollButtons from "../components/Projects/scrollButtons";
 
 const Home = () => {
   const [section, setSection] = useState("");
-  const [projIdx, setProjIdx] = useState(0);
+  const [currIdx, setCurrIdx] = useState(0);
+  const projCount = 2;
 
   const scrollHandler = () => {
     const scrollHeight = window.pageYOffset;
@@ -48,13 +50,21 @@ const Home = () => {
 
       <Nav section={section} setSection={setSection} />
 
-      <div id="Splash">
+      <div id="Splash" className="splash">
         <Splash />
       </div>
 
-      <div id="Projects">
+      <div id="Projects" className="projects">
         <Projects />
       </div>
+
+      <ScrollButtons
+        projCount={projCount}
+        currIdx={currIdx}
+        setCurrIdx={setCurrIdx}
+      />
+
+      <div id="About Me"></div>
 
       <style jsx>{`
         /* latin-ext */
@@ -111,13 +121,20 @@ const Home = () => {
           margin: 0;
           font-family: "Open Sans", sans-serif;
           background: grey;
-   
         }
 
         .home {
-          display: flex;
-          flex-direction: column;
+          scroll-snap-type: both proximity;
+          height: 10000px;
         }
+        .splash {
+          scroll-snap-align: center;
+        }
+
+        // .home {
+        //   display: flex;
+        //   flex-direction: column;
+        // }
       `}</style>
     </div>
   );
