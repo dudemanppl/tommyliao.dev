@@ -1,15 +1,8 @@
 import React from "react";
 
-const Inset = ({ name, techStack, description, bulletPoints, media }) => {
-  const randNum = () => {
-    return Math.floor(Math.random() * 30) + 220;
-  };
-
-  let RGBStr = "";
-  for (let i = 0; i < 3; i += 1) {
-    RGBStr += i < 2 ? randNum() + "," : randNum();
-  }
-
+const Inset = ({
+  project: { name, techStack, description, bulletPoints, media, RGBStr }
+}) => {
   return (
     <div className="inset">
       <style jsx>{`

@@ -1,5 +1,6 @@
 import React from "react";
 import Icons from "./icons";
+
 const Inset = () => {
   return (
     <div className="insetContainer">
