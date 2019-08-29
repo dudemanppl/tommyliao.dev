@@ -19,7 +19,7 @@ const Nav = ({ section }) => {
 
     if (section === "Projects") {
       classAdder("projectsButton");
-    } else if (section === "About Me") {
+    } else if (section === "AboutMe") {
       classAdder("aboutmeButton");
     } else if (section === "Contact") {
       classAdder("contactButton");
@@ -34,13 +34,14 @@ const Nav = ({ section }) => {
 
       <div className="buttonContainer">
         {["Projects", "About Me", "Contact"].map((label, i) => {
+          const noSpace = label.replace(/\s/g, "");
           return (
             <div
               key={label + i}
-              id={`${label.replace(/\s/g, "").toLowerCase()}Button`}
+              id={`${noSpace.toLowerCase()}Button`}
               className="button"
               onClick={e => {
-                clickHandler(e, label);
+                clickHandler(e, noSpace);
               }}
             >
               {label}

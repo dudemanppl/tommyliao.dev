@@ -23,10 +23,10 @@ const Projects = () => {
             overflow-x: auto;
             height: calc(100vh - 60px);
             width: 100%;
-            -webkit-overflow-scrolling: touch;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            overflow: -moz-scrollbars-none;
+            // -webkit-overflow-scrolling: touch;
+            // scroll-snap-type: x mandatory;
+            // scroll-behavior: smooth;
+            // overflow: -moz-scrollbars-none;
           }
 
           .projects::-webkit-scrollbar {
