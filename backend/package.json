@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Tommy Liao",
+  "license": "MIT",
+  "scripts": {
+    "start": "pm2 start index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pm2": "^3.5.1"
+  }
+}
