@@ -7,7 +7,7 @@ const Inset = ({
     <div className="inset">
       <style jsx>{`
         .inset {
-          flex-shrink: 0;
+          // flex-shrink: 0;
           position: relative;
           width: 100%;
           height: 100%;

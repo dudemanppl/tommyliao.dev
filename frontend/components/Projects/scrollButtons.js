@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const ScrollButtons = ({ projCount, currIdx, setCurrIdx }) => {
   let last = currIdx - 1 < 0 ? projCount : currIdx - 1;

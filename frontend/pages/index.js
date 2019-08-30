@@ -13,8 +13,6 @@ const Home = () => {
   const scrollHandler = () => {
     const scrollHeight = window.pageYOffset;
     const { innerHeight } = window;
-    console.log("scrollheight" + scrollHeight);
-    console.log("innerheight" + (innerHeight * 4 - 240));
     if (
       scrollHeight >= innerHeight - 60 &&
       scrollHeight < innerHeight * 2 - 120
