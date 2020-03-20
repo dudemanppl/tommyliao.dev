@@ -28,7 +28,11 @@ const Nav = ({ section }) => {
 
   return (
     <div className="nav">
-      <div id="logo" className="logo" onClick={e => clickHandler(e, "Splash")}>
+      <div
+        id="logo"
+        className="logo"
+        onClick={() => window.scroll({ top: 0, behavior: "smooth" })}
+      >
         <Logo size="60" />
       </div>
 

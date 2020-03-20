@@ -1,27 +1,30 @@
 import React from "react";
 import Inset from "./inset";
+
 import projects from "../../dummy";
 
 const Projects = () => {
   return (
     <div className="projects">
-      {projects.map((project, i) => {
+      {projects.map((project, i, a) => {
         return (
           <div id={"project" + i} className="project" key={project.name}>
-            <Inset project={project} />
+            <Inset project={project} index={i} max={a.length} />
           </div>
         );
       })}
 
       <style jsx>
         {`
+          .scroll {
+          }
           .projects {
+            z-index: 1;
             position: relative;
-            top: 60px;
             display: flex;
             flex-direction: row;
             overflow-x: auto;
-            height: calc(100vh - 60px);
+            height: 100vh;
             width: 100%;
             overflow: -moz-scrollbars-none;
           }
@@ -37,9 +40,10 @@ const Projects = () => {
             width: 100%;
             height: 100%;
           }
-          @media and (max-width: 700px) {
+          @media all and (min-width: 700px) {
             .projects {
-              height: 100%;
+              top: 60px;
+              height: calc(100vh - 60px);
             }
           }
         `}

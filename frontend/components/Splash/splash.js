@@ -5,7 +5,9 @@ const Splash = () => {
   // const
   return (
     <div className="splash">
-      <Inset />
+      <div className="inset">
+        <Inset />
+      </div>
       <style jsx>
         {`
           .splash {
@@ -29,9 +31,26 @@ const Splash = () => {
 
             height: calc(100vh - 60px);
           }
+
+          .inset {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+            width: 500px;
+            background: rgb(250, 250, 250);
+            box-shadow: 20px 20px 30px rgb(11, 104, 133);
+          }
+
           @media (max-width: 700px) {
             .splash {
               top: 0;
+              height: 100vh;
+            }
+            .inset {
+              width: 100%;
+              height: 600px;
+              box-shadow: 0 20px 30px rgb(11, 104, 133);
             }
           }
         `}

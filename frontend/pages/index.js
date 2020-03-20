@@ -7,8 +7,6 @@ import ScrollButtons from "../components/Projects/scrollButtons";
 
 const Home = () => {
   const [section, setSection] = useState("");
-  const [currIdx, setCurrIdx] = useState(0);
-  const projCount = 2;
 
   const scrollHandler = () => {
     const scrollHeight = window.pageYOffset;
@@ -56,11 +54,6 @@ const Home = () => {
 
       <div id="Projects" className="projects">
         <Projects />
-        <ScrollButtons
-          projCount={projCount}
-          currIdx={currIdx}
-          setCurrIdx={setCurrIdx}
-        />
       </div>
 
       <div id="AboutMe"></div>
@@ -120,6 +113,12 @@ const Home = () => {
           margin: 0;
           font-family: "Open Sans", sans-serif;
           background: grey;
+          scroll-snap-type: y mandatory;
+          overflow-y: scroll;
+        }
+
+        .home div {
+          scroll-snap-align: start;
         }
       `}</style>
     </div>

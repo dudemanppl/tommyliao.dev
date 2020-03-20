@@ -34,8 +34,8 @@ const ScrollButtons = ({ projCount, currIdx, setCurrIdx }) => {
       <style jsx>{`
         .scrollButtons {
           position: relative;
-          top: calc(-1 * 100vh + 60px);
-          width: 100%;
+          // top: calc(-1 * 100vh + 60px);
+          width: 100vw;
           height: 100vh;
           display: flex;
           justify-content: space-between;
@@ -45,13 +45,13 @@ const ScrollButtons = ({ projCount, currIdx, setCurrIdx }) => {
         .scrollNext {
           margin: 20px;
           font-size: 60px;
-          transition: color 0.2s;
+          transition: opacity 0.2s;
         }
 
         .scrollLast:hover,
         .scrollNext:hover {
           cursor: pointer;
-          color: white;
+          opacity: 0.5;
         }
       `}</style>
     </div>
