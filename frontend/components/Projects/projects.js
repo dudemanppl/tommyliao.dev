@@ -1,45 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import Inset from "./inset";
+import ScrollButtons from "./scrollButtons";
+import Test from "./test";
 
 import projects from "../../dummy";
 
 const Projects = () => {
+  const [currIdx, setCurrIdx] = useState(0);
+
   return (
     <div className="projects">
-      {projects.map((project, i, a) => {
+      {/* {projects.map((project, i, a) => {
         return (
           <div id={"project" + i} className="project" key={project.name}>
             <Inset project={project} index={i} max={a.length} />
           </div>
         );
-      })}
+      })} */}
+      {/* {currIdx} */}
+      <Test className="project" />
+
+      <ScrollButtons
+        currIdx={currIdx}
+        setCurrIdx={setCurrIdx}
+        projCount={projects.length}
+      />
 
       <style jsx>
         {`
-          .scroll {
-          }
           .projects {
             z-index: 1;
             position: relative;
             display: flex;
-            flex-direction: row;
-            overflow-x: auto;
             height: 100vh;
             width: 100%;
-            overflow: -moz-scrollbars-none;
-          }
-
-          .projects::-webkit-scrollbar {
-            width: 0 !important;
-            height: 0;
           }
 
           .project {
-            flex-shrink: 0;
-            position: relative;
-            width: 100%;
-            height: 100%;
+            width: 85%;
+            height: 85%;
+            background-color: white;
           }
+          
           @media all and (min-width: 700px) {
             .projects {
               top: 60px;

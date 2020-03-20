@@ -4,12 +4,7 @@ const ScrollButtons = ({ projCount, currIdx, setCurrIdx }) => {
   let last = currIdx - 1 < 0 ? projCount : currIdx - 1;
   let next = currIdx + 1 > projCount ? 0 : currIdx + 1;
 
-  const clickHandler = (id, direction) => {
-    document.getElementById(id).scrollIntoView({
-      behavior: "smooth",
-      block: "nearest"
-    });
-
+  const clickHandler = direction => {
     if (direction === "last") {
       setCurrIdx(last);
     } else if (direction === "next") {
@@ -21,22 +16,18 @@ const ScrollButtons = ({ projCount, currIdx, setCurrIdx }) => {
     <div className="scrollButtons">
       <div
         className="scrollLast"
-        onClick={() => {
-          clickHandler("project" + last, "last");
-        }}
+        onClick={() => clickHandler("last")}
       >{`<`}</div>
 
       <div
         className="scrollNext"
-        onClick={() => clickHandler("project" + next, "next")}
+        onClick={() => clickHandler("next")}
       >{`>`}</div>
 
       <style jsx>{`
         .scrollButtons {
-          position: relative;
-          // top: calc(-1 * 100vh + 60px);
-          width: 100vw;
-          height: 100vh;
+          width: 100%;
+          height: 100%;
           display: flex;
           justify-content: space-between;
           align-items: center;

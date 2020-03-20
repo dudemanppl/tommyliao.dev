@@ -14,7 +14,6 @@ const Inset = ({
   return (
     <div className="inset">
       <div className="project">
-        {/* <div className="mediaContainer">xD</div> */}
         <div className="name">{name}</div>
         <div className="description">{description}</div>
         <div className="stack">
