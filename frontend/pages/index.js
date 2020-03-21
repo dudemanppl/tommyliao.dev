@@ -44,6 +44,10 @@ const Home = () => {
           type="image/x-icon"
           href="https://dudemanppl.s3-us-west-1.amazonaws.com/favicon.ico"
         />
+        <meta
+          http-equiv="ScreenOrientation"
+          content="autoRotate:disabled"
+        ></meta>
       </Head>
 
       <Nav section={section} setSection={setSection} />
@@ -115,6 +119,7 @@ const Home = () => {
           background: grey;
           scroll-snap-type: y mandatory;
           overflow-y: scroll;
+          overflow-x: hidden;
         }
 
         .home div {

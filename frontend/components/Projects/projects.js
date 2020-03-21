@@ -1,51 +1,73 @@
 import React, { useState } from "react";
 import Inset from "./inset";
 import ScrollButtons from "./scrollButtons";
-import Test from "./test";
 
 import projects from "../../dummy";
 
 const Projects = () => {
-  const [currIdx, setCurrIdx] = useState(0);
+  const [currIdxShown, setCurrIdxShown] = useState(0);
+  const projCount = projects.length - 1;
 
   return (
     <div className="projects">
-      {/* {projects.map((project, i, a) => {
-        return (
-          <div id={"project" + i} className="project" key={project.name}>
-            <Inset project={project} index={i} max={a.length} />
-          </div>
-        );
-      })} */}
-      {/* {currIdx} */}
-      <Test className="project" />
+      <div className="project">
+        <Inset project={projects[currIdxShown]} />
+      </div>
 
-      <ScrollButtons
-        currIdx={currIdx}
-        setCurrIdx={setCurrIdx}
-        projCount={projects.length}
-      />
+      <div className="scrollButtons">
+        <ScrollButtons
+          currIdxShown={currIdxShown}
+          setCurrIdxShown={setCurrIdxShown}
+          projCount={projCount}
+        />
+      </div>
 
       <style jsx>
         {`
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+          
           .projects {
             z-index: 1;
             position: relative;
             display: flex;
-            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            top: 60px;
+            height: calc(100vh - 60px);
             width: 100%;
+            background: rgb(${projects[currIdxShown].RGBStr});
           }
 
           .project {
+            position: absolute;
+            z-index: 3;
             width: 85%;
             height: 85%;
-            background-color: white;
           }
-          
-          @media all and (min-width: 700px) {
+
+          .scrollButtons {
+            position: absolute;
+            z-index: 2;
+            height: 100%;
+            width: 100%;
+          }
+
+          @media all and (max-width: 700px) {
             .projects {
-              top: 60px;
-              height: calc(100vh - 60px);
+              top: 0px;
+              height: 100vh;
+            }
+
+            .project {
+              width: calc(100% - 65px);
+              height: calc(100% - 65px);
             }
           }
         `}

@@ -2,7 +2,6 @@ import React from "react";
 import Inset from "./inset";
 
 const Splash = () => {
-  // const
   return (
     <div className="splash">
       <div className="inset">
@@ -42,7 +41,7 @@ const Splash = () => {
             box-shadow: 20px 20px 30px rgb(11, 104, 133);
           }
 
-          @media (max-width: 700px) {
+          @media all and (max-width: 700px) {
             .splash {
               top: 0;
               height: 100vh;
@@ -51,6 +50,13 @@ const Splash = () => {
               width: 100%;
               height: 600px;
               box-shadow: 0 20px 30px rgb(11, 104, 133);
+            }
+          }
+
+          @media all and (max-height: 700px) {
+            .inset {
+              box-shadow: none;
+              height: 100%;
             }
           }
         `}

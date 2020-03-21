@@ -25,15 +25,17 @@ const Inset = () => {
           border: solid white 5px;
           box-shadow: 0px 0px 15px rgb(200, 200, 200);
         }
+        .resume {
+          display: none;
+          font-size: 30px;
+          font-weight: bold;
+        }
 
         a {
           color: black;
           text-decoration: none;
         }
-        .resume {
-          font-size: 30px;
-          font-weight: bold;
-        }
+
         .name {
           font-weight: bold;
           font-style: italic;
@@ -51,9 +53,9 @@ const Inset = () => {
           align-items: center;
           top: 50px;
         }
-        @media all and (min-width: 700px) {
+        @media all and (max-width: 700px) {
           .resume {
-            display: none;
+            display: inline-box;
           }
         }
 

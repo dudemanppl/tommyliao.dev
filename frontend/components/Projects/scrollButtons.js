@@ -1,14 +1,14 @@
 import React from "react";
 
-const ScrollButtons = ({ projCount, currIdx, setCurrIdx }) => {
-  let last = currIdx - 1 < 0 ? projCount : currIdx - 1;
-  let next = currIdx + 1 > projCount ? 0 : currIdx + 1;
+const ScrollButtons = ({ projCount, currIdxShown, setCurrIdxShown }) => {
+  let last = currIdxShown - 1 < 0 ? projCount : currIdxShown - 1;
+  let next = currIdxShown + 1 > projCount ? 0 : currIdxShown + 1;
 
   const clickHandler = direction => {
     if (direction === "last") {
-      setCurrIdx(last);
+      setCurrIdxShown(last);
     } else if (direction === "next") {
-      setCurrIdx(next);
+      setCurrIdxShown(next);
     }
   };
 
@@ -43,6 +43,15 @@ const ScrollButtons = ({ projCount, currIdx, setCurrIdx }) => {
         .scrollNext:hover {
           cursor: pointer;
           opacity: 0.5;
+        }
+
+        @media all and (max-width: 700px) {
+          .scrollLast,
+          .scrollNext {
+            margin: 5px;
+            font-size: 40px;
+            font-weight: bold;
+          }
         }
       `}</style>
     </div>
