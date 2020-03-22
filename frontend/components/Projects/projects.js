@@ -8,6 +8,8 @@ const Projects = () => {
   const [currIdxShown, setCurrIdxShown] = useState(0);
   const projCount = projects.length - 1;
 
+  const { RGBStr } = projects[currIdxShown];
+
   return (
     <div className="projects">
       <div className="project">
@@ -26,13 +28,13 @@ const Projects = () => {
         {`
           @keyframes fadeIn {
             from {
-              opacity: 0;
+              background: rgba(${RGBStr}, 0.9);
             }
             to {
-              opacity: 1;
+              background: rgb(${RGBStr});
             }
           }
-          
+
           .projects {
             z-index: 1;
             position: relative;
@@ -42,7 +44,9 @@ const Projects = () => {
             top: 60px;
             height: calc(100vh - 60px);
             width: 100%;
-            background: rgb(${projects[currIdxShown].RGBStr});
+            opacity: 1;
+            background: rgb(${RGBStr});
+            animation: fadeIn 1s ease-out;
           }
 
           .project {
@@ -50,6 +54,7 @@ const Projects = () => {
             z-index: 3;
             width: 85%;
             height: 85%;
+            box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
           }
 
           .scrollButtons {

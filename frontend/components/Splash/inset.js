@@ -17,17 +17,15 @@ const Inset = () => {
 
       <style jsx>{`
         img {
-          min-height: 250px;
-          min-width: 250px;
-          height: 50%;
-          width: 50%;
+          height: 250px;
+          width: 250px;
           border-radius: 50%;
           border: solid white 5px;
           box-shadow: 0px 0px 15px rgb(200, 200, 200);
         }
         .resume {
           display: none;
-          font-size: 30px;
+          font-size: 25px;
           font-weight: bold;
         }
 
@@ -59,9 +57,41 @@ const Inset = () => {
           }
         }
 
-        @media all and (max-width: 350px) {
+        @media all and (max-width: 400px) {
           .name {
-            font-size: 50px;
+            font-size: 40px;
+          }
+        }
+
+        @media all and (max-height: 585px) {
+          img {
+            height: 220px;
+            width: 220px;
+          }
+          .name {
+            font-size: 35px;
+          }
+          .bio {
+            font-size: 18px;
+          }
+          .resume {
+            font-size: 20px;
+          }
+        }
+
+        @media all and (max-height: 510px) {
+          img {
+            height: 200px;
+            width: 200px;
+          }
+          .name {
+            font-size: 30px;
+          }
+          .bio {
+            font-size: 15px;
+          }
+          .resume {
+            font-size: 18px;
           }
         }
       `}</style>

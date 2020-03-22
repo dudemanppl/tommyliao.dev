@@ -97,6 +97,91 @@ const Inset = ({
         .hidden {
           display: none;
         }
+
+        @media all and (max-width: 460px) {
+
+          .description {
+            width: 95%;
+          }
+          .name {
+            font-size: 40px;
+          }
+
+          .point {
+            margin-bottom: 8px;
+          }
+
+          .stack,
+          .point {
+            width: 90%;
+          }
+
+          .tech,
+          .point {
+            font-size: 14px;
+          }
+          .inset > div {
+            margin: 3px 0;
+          }
+        }
+
+        
+        @media all and (max-width: 385px) {
+          .name {
+            font-size: 30px;
+          }
+          
+          .icon {
+            height: 30px;
+            width: 30px;
+          }
+          
+          .point {
+            margin-bottom: 6px;
+          }
+          
+          .stack {
+            width: 100%;
+          }
+          
+          .tech,
+          .point,
+          .description {
+            font-size: 12px;
+          }
+          
+          .bullets {
+            width: 95%;
+          }
+          
+          .inset > div {
+            margin: 2px 0;
+          }
+        }
+        @media all and (max-height: 675px) {
+          .github{
+            position: relative;
+            top: -10px;
+          }
+        }
+
+        @media all and (max-height: 550px) {
+          .tech,
+          .point,
+          .description {
+            font-size: 11px;
+          }
+
+          .github{
+            position: relative;
+            top: 0;
+          }
+
+          .inset > div {
+            margin: 3px 0;
+          }
+        }
+      }
       `}</style>
     </div>
   );

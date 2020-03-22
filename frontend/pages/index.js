@@ -3,14 +3,13 @@ import Head from "next/head";
 import Nav from "../components/nav";
 import Splash from "../components/Splash/splash";
 import Projects from "../components/Projects/projects";
-import ScrollButtons from "../components/Projects/scrollButtons";
 
 const Home = () => {
   const [section, setSection] = useState("");
 
+  // sets section based on scroll height
   const scrollHandler = () => {
-    const scrollHeight = window.pageYOffset;
-    const { innerHeight } = window;
+    const { innerHeight, pageYOffset: scrollHeight } = window;
     if (
       scrollHeight >= innerHeight - 60 &&
       scrollHeight < innerHeight * 2 - 120
@@ -117,13 +116,7 @@ const Home = () => {
           margin: 0;
           font-family: "Open Sans", sans-serif;
           background: grey;
-          scroll-snap-type: y mandatory;
-          overflow-y: scroll;
-          overflow-x: hidden;
-        }
-
-        .home div {
-          scroll-snap-align: start;
+          box-sizing: border-box;
         }
       `}</style>
     </div>

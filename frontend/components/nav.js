@@ -3,7 +3,7 @@ import Logo from "./logo";
 
 const Nav = ({ section }) => {
   // scrolls to section and adds conditional styling to button
-  const clickHandler = (event, id) => {
+  const goToSection = (event, id) => {
     event.target.classList.add("current");
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   };
@@ -41,7 +41,7 @@ const Nav = ({ section }) => {
           id="projectsButton"
           className="button"
           onClick={e => {
-            clickHandler(e, "Projects");
+            goToSection(e, "Projects");
           }}
         >
           Projects
@@ -50,7 +50,7 @@ const Nav = ({ section }) => {
           id="aboutmeButton"
           className="button"
           onClick={e => {
-            clickHandler(e, "AboutMe");
+            goToSection(e, "AboutMe");
           }}
         >
           About Me

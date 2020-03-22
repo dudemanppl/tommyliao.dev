@@ -14,15 +14,9 @@ const ScrollButtons = ({ projCount, currIdxShown, setCurrIdxShown }) => {
 
   return (
     <div className="scrollButtons">
-      <div
-        className="scrollLast"
-        onClick={() => clickHandler("last")}
-      >{`<`}</div>
+      <div className="scrollLast" onClick={() => clickHandler("last")}></div>
 
-      <div
-        className="scrollNext"
-        onClick={() => clickHandler("next")}
-      >{`>`}</div>
+      <div className="scrollNext" onClick={() => clickHandler("next")}></div>
 
       <style jsx>{`
         .scrollButtons {
@@ -34,13 +28,26 @@ const ScrollButtons = ({ projCount, currIdxShown, setCurrIdxShown }) => {
         }
         .scrollLast,
         .scrollNext {
-          margin: 20px;
-          font-size: 60px;
+          margin: 3%;
           transition: opacity 0.2s;
+          width: 25px;
+          height: 25px;
+          border-top: 4px solid rgb(80, 80, 80);
+          border-right: 4px solid rgb(80, 80, 80);
+        }
+
+        .scrollLast {
+          transform: rotate(-135deg);
+        }
+
+        .scrollNext {
+          transform: rotate(45deg);
         }
 
         .scrollLast:hover,
-        .scrollNext:hover {
+        .scrollNext:hover,
+        .scrollLast:focus,
+        .scrollNext:focus {
           cursor: pointer;
           opacity: 0.5;
         }
@@ -48,9 +55,16 @@ const ScrollButtons = ({ projCount, currIdxShown, setCurrIdxShown }) => {
         @media all and (max-width: 700px) {
           .scrollLast,
           .scrollNext {
-            margin: 5px;
-            font-size: 40px;
-            font-weight: bold;
+            margin: 10px;
+            height: 20px;
+            width: 20px;
+          }
+        }
+        @media all and (max-width: 350px) {
+          .scrollLast,
+          .scrollNext {
+            width: 13px;
+            height: 13px;
           }
         }
       `}</style>
