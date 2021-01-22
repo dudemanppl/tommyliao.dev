@@ -3,8 +3,8 @@ import Logo from "./logo";
 
 const Nav = ({ section }) => {
   // scrolls to section and adds conditional styling to button
-  const goToSection = (event, id) => {
-    event.target.classList.add("current");
+  const goToSection = ({ target }, id) => {
+    target.classList.add("current");
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   };
 
@@ -21,8 +21,6 @@ const Nav = ({ section }) => {
       classAdder("projectsButton");
     } else if (section === "AboutMe") {
       classAdder("aboutmeButton");
-    } else if (section === "Contact") {
-      classAdder("contactButton");
     }
   }, [section]);
 
@@ -54,9 +52,6 @@ const Nav = ({ section }) => {
           }}
         >
           About Me
-        </div>
-        <div id="contactButton" className="button">
-          Contact{" "}
         </div>
 
         <a
