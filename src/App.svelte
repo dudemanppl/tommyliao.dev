@@ -2,7 +2,7 @@
   import { currentSection } from "./stores.js";
 
   import Nav from "./Nav/index.svelte";
-  import Splash from "./Splash/index.svelte";
+  import Landing from "./Landing/index.svelte";
   const updateSection = (newSection) => {
     $currentSection = newSection;
   };
@@ -10,7 +10,7 @@
 
 <main />
 <Nav />
-<Splash />
+<Landing />
 
 <style>
 </style>
