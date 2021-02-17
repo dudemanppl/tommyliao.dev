@@ -28,4 +28,10 @@
     width: 100%;
     justify-content: flex-end;
   }
+
+  @media (max-width: 700px) {
+    nav {
+      display: none;
+    }
+  }
 </style>
