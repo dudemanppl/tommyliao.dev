@@ -2,21 +2,33 @@
   export let size = 60;
 </script>
 
-<svg class="logo" height="{size}px" width="{size}px">
-  <rect />
-  <rect />
-  <rect />
-  <rect />
-  <rect />
-  <rect />
-  <rect />
-</svg>
+<li>
+  <button aria-label="Scroll to top">
+    <svg class="logo" height="{size}px" width="{size}px">
+      <rect />
+      <rect />
+      <rect />
+      <rect />
+      <rect />
+      <rect />
+      <rect />
+    </svg>
+  </button>
+</li>
 
 <style>
+  li {
+    margin-left: 30px;
+    margin-right: auto;
+  }
+
   .logo {
+    cursor: pointer;
     transition: opacity 0.2s;
   }
-  .logo:hover {
+
+  .logo:hover,
+  .logo:focus {
     opacity: 0.7;
   }
 
