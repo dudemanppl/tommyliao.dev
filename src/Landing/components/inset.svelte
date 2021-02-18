@@ -7,47 +7,27 @@
     src="https://dudemanppl.s3-us-west-1.amazonaws.com/41962026_1898602030162209_5312635139379953664_o+(1).jpg"
     alt="Me at Joshua Tree National Park at sunset"
   />
-  <div class="name">Tommy Liao</div>
-  <div class="bio">Full Stack Developer</div>
+
   <Icons />
-  <a
-    class="resume"
-    href="https://dudemanppl.s3-us-west-1.amazonaws.com/resume.pdf"
-  >
-    Resume
-  </a>
+  <div class="name">Tommy Liao</div>
+  <div class="descrip">Full Stack Developer</div>
 </div>
 
+<!-- 570 x 375 -->
 <style>
   img {
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    /* border: solid white 3px;
-    box-shadow: 0px 0px 15px rgb(200, 200, 200); */
-  }
-  .resume {
-    display: none;
-    font-size: 25px;
-    font-weight: bold;
-  }
-
-  a {
-    color: black;
-    text-decoration: none;
-  }
-
-  .name,
-  .bio {
-    color: #f1edeb;
+    height: 375px;
+    width: 375px;
+    border-radius: 40px 40px 0 0;
+    margin-bottom: 20px;
   }
 
   .name {
     font-weight: bold;
     font-style: italic;
-    font-size: 60px;
+    font-size: 50px;
   }
-  .bio {
+  .descrip {
     font-size: 20px;
     margin-bottom: 10px;
   }
@@ -55,62 +35,34 @@
   .inset {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    top: 50px;
-    height: 500px;
-    width: 500px;
-    /* background: rgb(250, 250, 250); */
-    /* box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.3); */
-  }
-  @media all and (max-width: 700px) {
-    .resume {
-      margin-top: 10px;
-      display: flex;
-    }
-
-    .inset {
-      width: 100%;
-      height: 80%;
-      box-shadow: 0 20px 30px rgb(11, 104, 133);
-    }
+    height: 570px;
+    width: 375px;
+    background: rgb(255, 255, 255);
+    border-radius: 40px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.3);
   }
 
-  @media all and (max-width: 400px) {
-    .name {
-      font-size: 40px;
-    }
-  }
-
-  @media all and (max-height: 585px) {
+  @media only screen and (max-width: 475px) {
     img {
-      height: 220px;
-      width: 220px;
+      height: 250px;
+      width: 250px;
+      border-radius: 20px 20px 0 0;
+      margin-bottom: 0;
     }
+
     .name {
       font-size: 35px;
     }
-    .bio {
-      font-size: 18px;
-    }
-    .resume {
-      font-size: 20px;
-    }
-  }
 
-  @media all and (max-height: 510px) {
-    img {
-      height: 200px;
-      width: 200px;
+    .inset {
+      height: 420px;
+      width: 250px;
+      border-radius: 20px;
     }
-    .name {
-      font-size: 30px;
-    }
-    .bio {
-      font-size: 15px;
-    }
-    .resume {
-      font-size: 18px;
+
+    .inset:nth-child(2) {
+      order: 4
     }
   }
 </style>

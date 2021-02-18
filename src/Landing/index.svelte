@@ -1,10 +1,5 @@
 <script>
   import Inset from "./components/inset.svelte";
-
-  // rgb(255, 255, 255),
-  //     rgb(135, 227, 255),
-  //     rgb(95, 212, 247),
-  //     rgb(78, 188, 222),
 </script>
 
 <div class="splash">
@@ -21,45 +16,45 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(170deg, #51c5e8, #e8688d, #daac74, #8bee82);
+    background: linear-gradient(70deg, #51c5e8, #e8688d, #daac74, #8bee82);
     background-size: 800% 800%;
-    -webkit-animation: background-color-animation 30s ease infinite;
-    -moz-animation: background-color-animation 30s ease infinite;
-    animation: background-color-animation 30s ease infinite;
+    -webkit-animation: background-color-animation 20s ease infinite;
+    -moz-animation: background-color-animation 20s ease infinite;
+    animation: background-color-animation 20s ease infinite;
     height: calc(100vh - 60px);
   }
 
   @-webkit-keyframes background-color-animation {
     0% {
-      background-position: 14% 0%;
+      background-position: 0% 90%;
     }
     50% {
-      background-position: 87% 100%;
+      background-position: 100% 11%;
     }
     100% {
-      background-position: 14% 0%;
+      background-position: 0% 90%;
     }
   }
   @-moz-keyframes background-color-animation {
     0% {
-      background-position: 14% 0%;
+      background-position: 0% 90%;
     }
     50% {
-      background-position: 87% 100%;
+      background-position: 100% 11%;
     }
     100% {
-      background-position: 14% 0%;
+      background-position: 0% 90%;
     }
   }
   @keyframes background-color-animation {
     0% {
-      background-position: 14% 0%;
+      background-position: 0% 90%;
     }
     50% {
-      background-position: 87% 100%;
+      background-position: 100% 11%;
     }
     100% {
-      background-position: 14% 0%;
+      background-position: 0% 90%;
     }
   }
 
