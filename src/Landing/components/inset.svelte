@@ -23,8 +23,8 @@
     height: 250px;
     width: 250px;
     border-radius: 50%;
-    border: solid white 5px;
-    box-shadow: 0px 0px 15px rgb(200, 200, 200);
+    /* border: solid white 3px;
+    box-shadow: 0px 0px 15px rgb(200, 200, 200); */
   }
   .resume {
     display: none;
@@ -35,6 +35,11 @@
   a {
     color: black;
     text-decoration: none;
+  }
+
+  .name,
+  .bio {
+    color: #f1edeb;
   }
 
   .name {
@@ -55,8 +60,8 @@
     top: 50px;
     height: 500px;
     width: 500px;
-    background: rgb(250, 250, 250);
-    box-shadow: 20px 20px 30px rgb(11, 104, 133);
+    /* background: rgb(250, 250, 250); */
+    /* box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.3); */
   }
   @media all and (max-width: 700px) {
     .resume {

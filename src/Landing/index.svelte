@@ -1,5 +1,10 @@
 <script>
   import Inset from "./components/inset.svelte";
+
+  // rgb(255, 255, 255),
+  //     rgb(135, 227, 255),
+  //     rgb(95, 212, 247),
+  //     rgb(78, 188, 222),
 </script>
 
 <div class="splash">
@@ -16,17 +21,46 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(
-      170deg,
-      rgb(255, 255, 255) 0%,
-      rgb(155, 232, 255) 18%,
-      rgb(135, 227, 255) 30%,
-      rgb(95, 212, 247) 45%,
-      rgb(78, 188, 222) 60%,
-      rgb(73, 181, 213) 75%,
-      rgb(63, 168, 200) 90%
-    );
+    background: linear-gradient(170deg, #51c5e8, #e8688d, #daac74, #8bee82);
+    background-size: 800% 800%;
+    -webkit-animation: background-color-animation 30s ease infinite;
+    -moz-animation: background-color-animation 30s ease infinite;
+    animation: background-color-animation 30s ease infinite;
     height: calc(100vh - 60px);
+  }
+
+  @-webkit-keyframes background-color-animation {
+    0% {
+      background-position: 14% 0%;
+    }
+    50% {
+      background-position: 87% 100%;
+    }
+    100% {
+      background-position: 14% 0%;
+    }
+  }
+  @-moz-keyframes background-color-animation {
+    0% {
+      background-position: 14% 0%;
+    }
+    50% {
+      background-position: 87% 100%;
+    }
+    100% {
+      background-position: 14% 0%;
+    }
+  }
+  @keyframes background-color-animation {
+    0% {
+      background-position: 14% 0%;
+    }
+    50% {
+      background-position: 87% 100%;
+    }
+    100% {
+      background-position: 14% 0%;
+    }
   }
 
   @keyframes bounce {
