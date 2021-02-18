@@ -8,9 +8,9 @@
     alt="Me at Joshua Tree National Park at sunset"
   />
 
-  <Icons />
   <div class="name">Tommy Liao</div>
   <div class="descrip">Full Stack Developer</div>
+  <Icons />
 </div>
 
 <!-- 570 x 375 -->
@@ -18,8 +18,8 @@
   img {
     height: 375px;
     width: 375px;
-    border-radius: 40px 40px 0 0;
-    margin-bottom: 20px;
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 15px;
   }
 
   .name {
@@ -39,16 +39,15 @@
     height: 570px;
     width: 375px;
     background: rgb(255, 255, 255);
-    border-radius: 40px;
+    border-radius: 20px;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.3);
   }
 
-  @media only screen and (max-width: 475px) {
+  @media screen and (max-width: 475px), screen and (max-height: 670px) {
     img {
       height: 250px;
       width: 250px;
-      border-radius: 20px 20px 0 0;
-      margin-bottom: 0;
+      border-radius: 10px 10px 0 0;
     }
 
     .name {
@@ -58,11 +57,7 @@
     .inset {
       height: 420px;
       width: 250px;
-      border-radius: 20px;
-    }
-
-    .inset:nth-child(2) {
-      order: 4
+      border-radius: 10px;
     }
   }
 </style>
