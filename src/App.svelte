@@ -3,14 +3,13 @@
 
   import Nav from "./Nav/index.svelte";
   import Landing from "./Landing/index.svelte";
-  const updateSection = (newSection) => {
-    $currentSection = newSection;
-  };
+  import Projects from "./Projects/index.svelte";
 </script>
 
 <main>
   <Nav />
   <Landing />
+  <Projects />
 </main>
 
 <style>

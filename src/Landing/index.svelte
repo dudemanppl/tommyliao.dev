@@ -18,8 +18,6 @@
     align-items: center;
   }
 
-  
-
   @keyframes bounce {
     0%,
     20%,
