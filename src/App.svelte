@@ -1,6 +1,4 @@
 <script>
-  import { currentSection } from "./stores.js";
-
   import Nav from "./Nav/index.svelte";
   import Landing from "./Landing/index.svelte";
   import Projects from "./Projects/index.svelte";
