@@ -13,7 +13,6 @@
   <Icons />
 </div>
 
-<!-- 570 x 375 -->
 <style>
   img {
     height: 375px;
@@ -45,7 +44,6 @@
       0 0 8px var(--white-shadow), 0 0 16px var(--white-shadow),
       0 0 32px var(--white-shadow), 0 0 64px var(--white-shadow),
       0 0 128px var(--white-shadow), 0 0 64px rgba(40, 40, 40, 0.2);
-    /* box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.3); */
   }
 
   @media screen and (max-width: 475px), (max-height: 770px) {

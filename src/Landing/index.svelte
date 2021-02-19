@@ -1,11 +1,15 @@
 <script>
+  import Intersection from "../util/intersectionObserver.svelte";
+  import { currentSection } from "../stores.js";
   import Inset from "./components/inset.svelte";
 </script>
 
-<div class="splash">
-  <Inset />
-  <div class="arrow" />
-</div>
+<Intersection sectionName="Top">
+  <div class="splash">
+    <Inset />
+    <div class="arrow" />
+  </div>
+</Intersection>
 
 <style>
   .splash {
