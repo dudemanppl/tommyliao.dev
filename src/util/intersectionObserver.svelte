@@ -1,12 +1,16 @@
 <script>
   import { onMount } from "svelte";
-  import { currentSection } from "../stores.js";
+  import { currentSection, sections } from "../stores.js";
 
   export let sectionName;
   export let cb = () => {};
 
   let observer;
-  let elementToObserve;
+  let childElement;
+
+  const addSection = (section) => {
+    $sections = { ...$sections, [sectionName]: section };
+  };
 
   const handleIntersect = (entries, observer) => {
     const [{ isIntersecting }] = entries;
@@ -15,20 +19,20 @@
       $currentSection = sectionName;
       cb(entries, observer);
     }
-    console.log($currentSection);
   };
 
   const options = { threshold: 0.15 };
 
   onMount(() => {
     observer = new IntersectionObserver(handleIntersect, options);
-    observer.observe(elementToObserve);
+    observer.observe(childElement);
+    addSection(childElement);
 
-    return () => observer.unobserve(elementToObserve);
+    return () => observer.unobserve(childElement);
   });
 </script>
 
-<div bind:this={elementToObserve}>
+<div bind:this={childElement}>
   <slot />
 </div>
 

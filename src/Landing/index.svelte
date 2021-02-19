@@ -1,6 +1,5 @@
 <script>
   import Intersection from "../util/intersectionObserver.svelte";
-  import { currentSection } from "../stores.js";
   import Inset from "./components/inset.svelte";
 </script>
 
