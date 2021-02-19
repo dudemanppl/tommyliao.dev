@@ -29,7 +29,7 @@
     justify-content: flex-end;
   }
 
-  @media (max-width: 700px) {
+  @media screen and (max-width: 500px), (max-height: 570px) {
     nav {
       display: none;
     }

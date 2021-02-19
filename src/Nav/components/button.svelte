@@ -1,9 +1,12 @@
 <script>
+  import { currentSection } from "../../stores.js";
+
   export let label = "";
+  $: current = $currentSection === label;
 </script>
 
 <li>
-  <button>
+  <button class:current>
     {label}
   </button>
 </li>
