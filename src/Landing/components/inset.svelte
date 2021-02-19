@@ -40,7 +40,10 @@
     width: 375px;
     background: rgb(255, 255, 255);
     border-radius: 20px;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.3);
+    --shadow: rgba(250, 250, 250, 0.15);
+    box-shadow: 0 1px 2px var(--shadow), 0 2px 4px var(--shadow),
+      0 4px 8px var(--shadow), 0 8px 16px var(--shadow),
+      0 16px 32px var(--shadow), 0 32px 64px var(--shadow);
   }
 
   @media screen and (max-width: 475px), (max-height: 770px) {
