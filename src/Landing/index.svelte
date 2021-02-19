@@ -84,14 +84,14 @@
     animation: bounce 2s infinite;
   }
 
-  @media all and (max-width: 700px) {
+  @media all and (max-width: 700px), (max-height: 570px) {
     .splash {
       top: 0;
       height: 100vh;
     }
   }
 
-  @media all and (max-width: 700px), (max-height: 750px) {
+  @media all and (max-width: 700px), (max-height: 800px) {
     .arrow {
       width: 25px;
       height: 25px;

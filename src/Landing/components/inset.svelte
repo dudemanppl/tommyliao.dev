@@ -43,7 +43,7 @@
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.3);
   }
 
-  @media screen and (max-width: 475px), screen and (max-height: 670px) {
+  @media screen and (max-width: 475px), (max-height: 770px) {
     img {
       height: 250px;
       width: 250px;
