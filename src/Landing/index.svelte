@@ -11,52 +11,14 @@
   .splash {
     position: relative;
     z-index: 1;
-    top: 60px;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(70deg, #51c5e8, #e8688d, #daac74, #8bee82);
-    background-size: 800% 800%;
-    -webkit-animation: background-color-animation 20s ease infinite;
-    -moz-animation: background-color-animation 20s ease infinite;
-    animation: background-color-animation 20s ease infinite;
-    height: calc(100vh - 60px);
   }
 
-  @-webkit-keyframes background-color-animation {
-    0% {
-      background-position: 0% 90%;
-    }
-    50% {
-      background-position: 100% 11%;
-    }
-    100% {
-      background-position: 0% 90%;
-    }
-  }
-  @-moz-keyframes background-color-animation {
-    0% {
-      background-position: 0% 90%;
-    }
-    50% {
-      background-position: 100% 11%;
-    }
-    100% {
-      background-position: 0% 90%;
-    }
-  }
-  @keyframes background-color-animation {
-    0% {
-      background-position: 0% 90%;
-    }
-    50% {
-      background-position: 100% 11%;
-    }
-    100% {
-      background-position: 0% 90%;
-    }
-  }
+  
 
   @keyframes bounce {
     0%,
@@ -82,13 +44,6 @@
     border-top: 4px solid white;
     border-right: 4px solid white;
     animation: bounce 2s infinite;
-  }
-
-  @media all and (max-width: 700px), (max-height: 570px) {
-    .splash {
-      top: 0;
-      height: 100vh;
-    }
   }
 
   @media all and (max-width: 700px), (max-height: 800px) {
