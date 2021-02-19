@@ -8,19 +8,14 @@ const createCurrentSection = () => {
   return { subscribe, setCurrentSection };
 };
 
-const createSections = () => {
-  const { subscribe, update } = writable({});
+const sections = {};
 
-  const addSection = (newSection) => {
-    update((sections) => {
-      return { ...sections, ...newSection };
-    });
-  };
-
-  return { subscribe, addSection };
+const addSection = (sectionName, element) => {
+  sections[sectionName] = element;
 };
 
+Object.setPrototypeOf(sections, { ...Object.prototype, addSection });
+
 const currentSection = createCurrentSection();
-const sections = createSections();
 
 export { currentSection, sections };

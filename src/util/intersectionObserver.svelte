@@ -7,44 +7,20 @@
   export let sectionName;
   export let cb = () => {};
 
+  const sectionIntersectionRatios = {};
   let observer;
   let childElement;
 
   const handleIntersect = (entries, observer) => {
-    const [{ isIntersecting }] = entries;
+    const [{ intersectionRatio }] = entries;
 
-    let [
-      { rootBounds, boundingClientRect, intersectionRect, target },
-    ] = entries;
+    if (intersectionRatio > 0 && intersectionRatio < 1) {
+      console.log(sectionName, entries[0].intersectionRatio);
 
-    console.log(observer);
-
-    rootBounds = {
-      y: rootBounds.y,
-      width: rootBounds.width,
-      height: rootBounds.height,
-      top: rootBounds.top,
-      bottom: rootBounds.bottom,
-    };
-    boundingClientRect = {
-      y: boundingClientRect.y,
-      width: boundingClientRect.width,
-      height: boundingClientRect.height,
-      top: boundingClientRect.top,
-      bottom: boundingClientRect.bottom,
-    };
-    intersectionRect = {
-      y: intersectionRect.y,
-      width: intersectionRect.width,
-      height: intersectionRect.height,
-      top: intersectionRect.top,
-      bottom: intersectionRect.bottom,
-    };
-
-    // rootBounds	boundingClientRect	intersectionRect
-    if (isIntersecting) {
+      sectionIntersectionRatios[sectionName] = intersectionRatio;
+      console.log(sectionIntersectionRatios);
       // console.table({ rootBounds, boundingClientRect, intersectionRect });
-      console.log(target);
+      // console.log(target);
       setCurrentSection(sectionName);
       // $sections[$currentSection].scrollIntoView({
       //   behavior: "smooth",
@@ -57,18 +33,17 @@
     threshold: (() => {
       const thresholdArr = [];
 
-      for (let i = 0; i < 20; i += 2) {
+      for (let i = 0; i < 20; i += 1) {
         thresholdArr.push(i / 100);
       }
       return thresholdArr;
     })(),
-    // threshold: 0.1,
   };
 
   onMount(() => {
     observer = new IntersectionObserver(handleIntersect, observerOptions);
     observer.observe(childElement);
-    addSection({ [sectionName]: childElement });
+    addSection(sectionName, childElement);
 
     return () => observer.unobserve(childElement);
   });
