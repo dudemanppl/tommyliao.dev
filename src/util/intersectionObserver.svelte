@@ -10,7 +10,7 @@
   let elementToObserve;
 
   onMount(() => {
-    new IntersectionObserver(cb, { threshold: 0.1 }).observe(elementToObserve);
+    new IntersectionObserver(cb, { threshold: 0.15 }).observe(elementToObserve);
   });
 </script>
 
@@ -20,9 +20,7 @@
 
 <style>
   div {
-    position: relative;
-    z-index: -10;
-    height: 100vh;
     width: 100%;
+    height: 100%;
   }
 </style>
