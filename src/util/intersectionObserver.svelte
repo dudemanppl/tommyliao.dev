@@ -1,6 +1,8 @@
 <script>
   import { onMount } from "svelte";
   import { currentSection, sections } from "../stores.js";
+  const { setCurrentSection } = currentSection;
+  const { addSection } = sections;
 
   export let sectionName;
   export let cb = () => {};
@@ -8,25 +10,21 @@
   let observer;
   let childElement;
 
-  const addSection = (section) => {
-    $sections = { ...$sections, [sectionName]: section };
-  };
-
   const handleIntersect = (entries, observer) => {
     const [{ isIntersecting }] = entries;
 
     if (isIntersecting) {
-      $currentSection = sectionName;
+      setCurrentSection(sectionName);
       cb(entries, observer);
     }
   };
 
-  const options = { threshold: 0.15 };
+  const observerOptions = { threshold: 0.15 };
 
   onMount(() => {
-    observer = new IntersectionObserver(handleIntersect, options);
+    observer = new IntersectionObserver(handleIntersect, observerOptions);
     observer.observe(childElement);
-    addSection(childElement);
+    addSection({ [sectionName]: childElement });
 
     return () => observer.unobserve(childElement);
   });
