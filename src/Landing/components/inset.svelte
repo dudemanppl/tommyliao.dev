@@ -38,12 +38,14 @@
     align-items: center;
     height: 570px;
     width: 375px;
-    background: rgb(255, 255, 255);
+    background: white;
     border-radius: 20px;
-    --shadow: rgba(250, 250, 250, 0.15);
-    box-shadow: 0 1px 2px var(--shadow), 0 2px 4px var(--shadow),
-      0 4px 8px var(--shadow), 0 8px 16px var(--shadow),
-      0 16px 32px var(--shadow), 0 32px 64px var(--shadow);
+    --white-shadow: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 2px var(--white-shadow), 0 0 4px var(--white-shadow),
+      0 0 8px var(--white-shadow), 0 0 16px var(--white-shadow),
+      0 0 32px var(--white-shadow), 0 0 64px var(--white-shadow),
+      0 0 128px var(--white-shadow), 0 0 64px rgba(40, 40, 40, 0.2);
+    /* box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.3); */
   }
 
   @media screen and (max-width: 475px), (max-height: 770px) {

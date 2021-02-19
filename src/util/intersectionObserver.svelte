@@ -23,6 +23,6 @@
     position: relative;
     z-index: -10;
     height: 100vh;
-    width: 100vh;
+    width: 100%;
   }
 </style>
