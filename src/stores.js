@@ -55,19 +55,18 @@ const observerOptions = {
     0.18,
     0.19,
   ],
-  // threshold: 0.15,
 };
 
 const createObserver = () => {
-  const handleIntersect = ([
-    {
-      intersectionRatio,
-      target: {
-        dataset: { section },
-      },
-    },
-  ]) => {
-    // console.log(section, intersectionRatio);
+  const handleIntersect = ([{ intersectionRatio, target }], observer) => {
+    const {
+      dataset: { section },
+    } = target;
+    console.log(section, intersectionRatio);
+
+    if (intersectionRatio > 0.5) {
+      observer.unobserve(target);
+    }
   };
 
   const { subscribe } = readable(
