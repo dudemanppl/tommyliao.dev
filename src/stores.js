@@ -27,7 +27,13 @@ const sections = createSections();
 const createSectionIntersectionRatios = () => {
   const { subscribe, update } = writable({});
 
-  return { subscribe };
+  const updateIntersectionRatios = (newRatios) => {
+    update((intersectionRatios) => {
+      return { ...intersectionRatios, ...newRatios };
+    });
+  };
+
+  return { subscribe, updateIntersectionRatios };
 };
 
 const sectionIntersectionRatios = createSectionIntersectionRatios();
@@ -58,15 +64,32 @@ const observerOptions = {
 };
 
 const createObserver = () => {
-  const handleIntersect = ([{ intersectionRatio, target }], observer) => {
+  let intersectionRatios;
+
+  sectionIntersectionRatios.subscribe(
+    ($ratios) => (intersectionRatios = $ratios)
+  );
+
+  const handleIntersect = (
+    [{ intersectionRatio: currRatio, target }],
+    observer
+  ) => {
     const {
       dataset: { section },
     } = target;
-    console.log(section, intersectionRatio);
+    // console.log(section, currRatio);
 
-    if (intersectionRatio > 0.5) {
-      observer.unobserve(target);
-    }
+    sectionIntersectionRatios.updateIntersectionRatios({
+      [section]: currRatio,
+    });
+
+    console.log(intersectionRatios);
+
+    // console.log(sectionIntersectionRatios.updateIntersectionRatios);
+
+    // if (intersectionRatio > 0.5) {
+    //   observer.unobserve(target);
+    // }
   };
 
   const { subscribe } = readable(
