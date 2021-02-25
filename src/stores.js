@@ -1,14 +1,4 @@
-import { writable, readable, get } from "svelte/store";
-
-const createCurrentSection = () => {
-  const { subscribe, set } = writable("Top");
-
-  const setCurrentSection = (sectionName) => set(sectionName);
-
-  return { subscribe, setCurrentSection };
-};
-
-const currentSection = createCurrentSection();
+import { writable, readable } from "svelte/store";
 
 const createSections = () => {
   const { subscribe, update } = writable({});
@@ -23,6 +13,23 @@ const createSections = () => {
 };
 
 const sections = createSections();
+
+const createCurrentSection = () => {
+  let sects;
+
+  sections.subscribe(($sections) => (sects = $sections));
+
+  const { subscribe, set } = writable("Top");
+
+  const setCurrentSection = (sectionName) => {
+    set(sectionName);
+    window.scroll({ top: sects[sectionName].offsetTop, behavior: "smooth" });
+  };
+
+  return { subscribe, setCurrentSection };
+};
+
+const currentSection = createCurrentSection();
 
 const createSectionIntersectionRatios = () => {
   const { subscribe, update } = writable({});
@@ -41,25 +48,21 @@ const sectionIntersectionRatios = createSectionIntersectionRatios();
 const observerOptions = {
   threshold: [
     0,
-    0.01,
     0.02,
-    0.03,
     0.04,
-    0.05,
     0.06,
-    0.07,
     0.08,
-    0.09,
     0.1,
-    0.11,
     0.12,
-    0.13,
     0.14,
-    0.15,
     0.16,
-    0.17,
     0.18,
-    0.19,
+    0.2,
+    0.22,
+    0.24,
+    0.26,
+    0.28,
+    0.3,
   ],
 };
 
@@ -77,17 +80,21 @@ const createObserver = () => {
     observer
   ) => {
     const {
-      dataset: { section },
+      dataset: { section: observerSection },
     } = target;
-    const prevRatio = intersectionRatios[section];
+    const prevRatio = intersectionRatios[observerSection];
 
-    if (currRatio > prevRatio && currRatio && prevRatio) {
-      currentSection.setCurrentSection(section);
-      observer.unobserve(target);
+    if (
+      currRatio > prevRatio &&
+      currRatio &&
+      prevRatio &&
+      observerSection !== currSection
+    ) {
+      currentSection.setCurrentSection(observerSection);
     }
 
     sectionIntersectionRatios.updateIntersectionRatios({
-      [section]: currRatio,
+      [observerSection]: currRatio,
     });
   };
 
@@ -99,4 +106,4 @@ const createObserver = () => {
 
 const observer = createObserver();
 
-export { currentSection, sections, sectionIntersectionRatios, observer };
+export { sections, currentSection, sectionIntersectionRatios, observer };

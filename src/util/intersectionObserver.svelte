@@ -5,17 +5,17 @@
 
   export let sectionName;
 
-  let childElement;
+  let elementToObserve;
 
   onMount(() => {
-    $observer.observe(childElement);
-    updateSections({ [sectionName]: childElement });
+    $observer.observe(elementToObserve);
+    updateSections({ [sectionName]: elementToObserve });
 
-    return () => $observer.unobserve(childElement);
+    return () => $observer.unobserve(elementToObserve);
   });
 </script>
 
-<div bind:this={childElement} data-section={sectionName}>
+<div bind:this={elementToObserve} data-section={sectionName}>
   <slot />
 </div>
 

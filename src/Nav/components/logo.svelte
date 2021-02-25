@@ -3,7 +3,10 @@
 </script>
 
 <li>
-  <button aria-label="Scroll to top">
+  <button
+    on:click={() => window.scroll({ top: 0, behavior: "smooth" })}
+    aria-label="Scroll to top"
+  >
     <svg class="logo" height="{size}px" width="{size}px">
       <rect />
       <rect />
