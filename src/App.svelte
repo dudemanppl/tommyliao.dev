@@ -7,17 +7,7 @@
   import IntersectionObserver from "./util/intersectionObserver.svelte";
 
   afterUpdate(() => {
-    let lowest;
-
-    for (const { sectionName, section } in $sections) {
-      console.log(sectionName);
-    }
-
-    // const nice = [...$sections].map((section) => {
-    //   const [{ y }] = section.getClientRects();
-    // });
-    // // const nice = Math.min(...$sections.getClientRects()[0].y);
-    // console.log(nice);
+    // console.log($sections.min);
   });
 </script>
 
