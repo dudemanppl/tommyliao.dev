@@ -1,13 +1,33 @@
 <script>
+  import { afterUpdate } from "svelte";
+  import { currentSection, sections } from "./stores";
   import Nav from "./Nav/index.svelte";
   import Landing from "./Landing/index.svelte";
   import Projects from "./Projects/index.svelte";
+  import IntersectionObserver from "./util/intersectionObserver.svelte";
+
+  afterUpdate(() => {
+    let lowest;
+
+    for (const { sectionName, section } in $sections) {
+      console.log(sectionName);
+    }
+
+    // const nice = [...$sections].map((section) => {
+    //   const [{ y }] = section.getClientRects();
+    // });
+    // // const nice = Math.min(...$sections.getClientRects()[0].y);
+    // console.log(nice);
+  });
 </script>
 
 <main>
   <Nav />
   <Landing />
   <Projects />
+  <IntersectionObserver sectionName="About Me"
+    ><div style="width:100%; height: 100vh;" /></IntersectionObserver
+  >
 </main>
 
 <style>

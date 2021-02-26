@@ -9,7 +9,8 @@
 
   onMount(() => {
     $observer.observe(elementToObserve);
-    updateSections({ [sectionName]: elementToObserve });
+    $sections = { ...{ [sectionName]: elementToObserve }, ...$sections };
+    console.log(sectionName, Math.abs(elementToObserve.getClientRects()[0].y));
 
     return () => $observer.unobserve(elementToObserve);
   });

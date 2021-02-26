@@ -1,15 +1,9 @@
 import { writable, readable } from "svelte/store";
 
 const createSections = () => {
-  const { subscribe, update } = writable({});
+  const { subscribe, set } = writable({});
 
-  const updateSections = (newSection) => {
-    update((sections) => {
-      return { ...sections, ...newSection };
-    });
-  };
-
-  return { subscribe, updateSections };
+  return { subscribe, set };
 };
 
 const sections = createSections();
@@ -46,24 +40,7 @@ const createSectionIntersectionRatios = () => {
 const sectionIntersectionRatios = createSectionIntersectionRatios();
 
 const observerOptions = {
-  threshold: [
-    0,
-    0.02,
-    0.04,
-    0.06,
-    0.08,
-    0.1,
-    0.12,
-    0.14,
-    0.16,
-    0.18,
-    0.2,
-    0.22,
-    0.24,
-    0.26,
-    0.28,
-    0.3,
-  ],
+  threshold: [0.2, 0.3],
 };
 
 const createObserver = () => {
@@ -101,6 +78,7 @@ const createObserver = () => {
   const { subscribe } = readable(
     new IntersectionObserver(handleIntersect, observerOptions)
   );
+
   return { subscribe };
 };
 
