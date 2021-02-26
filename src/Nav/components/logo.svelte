@@ -1,12 +1,15 @@
 <script>
+  import { currentSection } from "../../stores.js";
+  const { setCurrentSection } = currentSection;
+  const scrollToTop = () => {
+    setCurrentSection("Top", 0);
+  };
+
   export let size = 60;
 </script>
 
 <li>
-  <button
-    on:click={() => window.scroll({ top: 0, behavior: "smooth" })}
-    aria-label="Scroll to top"
-  >
+  <button on:click={scrollToTop} aria-label="Scroll to top">
     <svg class="logo" height="{size}px" width="{size}px">
       <rect />
       <rect />

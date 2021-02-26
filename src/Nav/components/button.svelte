@@ -1,17 +1,18 @@
 <script>
-  import { sections, currentSection } from "../../stores.js";
+  import { currentSection } from "../../stores.js";
+  const { setCurrentSection } = currentSection;
 
   export let label = "";
 
-  const scrollToSection = () => {
-    window.scroll({ top: $sections[label].offsetTop, behavior: "smooth" });
-  };
-
   $: current = $currentSection === label;
+
+  const scrollToSection = () => {
+    setCurrentSection(label);
+  };
 </script>
 
 <li>
-  <button on:click={$currentSection.setCurrentSection(label)} class:current>
+  <button on:click={scrollToSection} class:current>
     {label}
   </button>
 </li>

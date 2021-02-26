@@ -20,9 +20,12 @@ const createCurrentSection = () => {
 
   const { subscribe, set } = writable("Top");
 
-  const setCurrentSection = (sectionName) => {
+  const setCurrentSection = (
+    sectionName,
+    top = sects[sectionName].offsetTop
+  ) => {
     set(sectionName);
-    window.scroll({ top: sects[sectionName].offsetTop, behavior: "smooth" });
+    window.scroll({ top, behavior: "smooth" });
   };
 
   return { subscribe, setCurrentSection };
@@ -45,7 +48,7 @@ const createSectionIntersectionRatios = () => {
 const sectionIntersectionRatios = createSectionIntersectionRatios();
 
 const observerOptions = {
-  threshold: [0.2, 0.3],
+  threshold: [0.05, 0.1, 0.15, 0.2, 0.3],
 };
 
 const createObserver = () => {
