@@ -1,9 +1,14 @@
 import { writable, readable } from "svelte/store";
 
 const createSections = () => {
-  const { subscribe, set } = writable({});
+  const { subscribe, update } = writable({});
 
-  return { subscribe, set };
+  const updateSections = (newSections) =>
+    update((sections) => {
+      return { ...sections, ...newSections };
+    });
+
+  return { subscribe, updateSections };
 };
 
 const sections = createSections();

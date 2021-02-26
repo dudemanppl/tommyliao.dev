@@ -1,20 +1,22 @@
 <script>
   import { onMount } from "svelte";
   import { sections, observer } from "../stores.js";
+  const { updateSections } = sections;
 
   export let sectionName;
 
   let elementToObserve;
 
-  onMount(() => {
-    const min = Math.min(
-      Math.abs(elementToObserve.getClientRects()[0].y, $sections.min)
-    );
+  const currY = Math.abs(elementToObserve.getClientRects()[0].y);
 
+  const min =
+    !$sections.min || $sections.min[1] > currY
+      ? [sectionName, currY]
+      : $sections.min;
+
+  onMount(() => {
     $observer.observe(elementToObserve);
-    $sections = { [sectionName]: elementToObserve, min, ...$sections };
-    console.log(min);
-    console.log(elementToObserve.getClientRects()[0].y, $sections.min);
+    updateSections({ [sectionName]: elementToObserve, min });
 
     return () => $observer.unobserve(elementToObserve);
   });

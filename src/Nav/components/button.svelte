@@ -11,7 +11,7 @@
 </script>
 
 <li>
-  <button on:click={scrollToSection} class:current>
+  <button on:click={$currentSection.setCurrentSection(label)} class:current>
     {label}
   </button>
 </li>
