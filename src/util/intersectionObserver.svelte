@@ -8,11 +8,11 @@
   let elementToObserve;
 
   onMount(() => {
-    const currY = Math.abs(elementToObserve.getClientRects()[0].y);
+    const currElemPxFromTop = Math.abs(elementToObserve.getClientRects()[0].y);
 
     const min =
-      !$sections.min || $sections.min[1] > currY
-        ? [sectionName, currY]
+      !$sections.min || $sections.min[1] > currElemPxFromTop
+        ? [sectionName, currElemPxFromTop]
         : $sections.min;
 
     $observer.observe(elementToObserve);
