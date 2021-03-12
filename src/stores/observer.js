@@ -20,12 +20,6 @@ const handleIntersect = ([
       (intersectionRatios = $sectionIntersectionRatios)
   );
 
-  const prevRatio = intersectionRatios[observerSection];
-
-  if (currRatio > prevRatio && observerSection !== observerSection) {
-    currentSection.setCurrentSection(observerSection);
-  }
-
   sectionIntersectionRatios.updateIntersectionRatios({
     [observerSection]: currRatio,
   });
