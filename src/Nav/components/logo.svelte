@@ -1,5 +1,5 @@
 <script>
-  import { currentSection } from "../../stores.js";
+  import { currentSection } from "../../stores/index";
   const { setCurrentSection } = currentSection;
   const scrollToTop = () => {
     setCurrentSection("Top", 0);
@@ -26,6 +26,7 @@
   li {
     margin-left: 30px;
     margin-right: auto;
+    background-color: white;
   }
 
   .logo {

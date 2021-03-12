@@ -1,5 +1,5 @@
 <script>
-  import { currentSection } from "../../stores.js";
+  import { currentSection } from "../../stores/index.js";
   const { setCurrentSection } = currentSection;
 
   export let label = "";
@@ -12,7 +12,7 @@
 </script>
 
 <li>
-  <button on:click={scrollToSection} class:current>
+  <button on:click|preventDefault={scrollToSection} class:current>
     {label}
   </button>
 </li>
@@ -28,7 +28,6 @@
   }
 
   button:hover,
-  button:focus,
   button.current {
     color: #3b3b3b;
     font-weight: bold;
@@ -48,7 +47,6 @@
   }
 
   button:hover::after,
-  button:focus::after,
   button:active::after,
   button.current::after {
     left: -15%;

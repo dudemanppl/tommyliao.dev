@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { sections, observer } from "../stores.js";
+  import { sections, observer } from "../stores/index.js";
   const { updateSections } = sections;
 
   export let sectionName;

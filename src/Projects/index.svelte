@@ -11,6 +11,6 @@
     z-index: 1;
     width: 100%;
     height: 100vh;
-    background: grey;
+    /* background: grey; */
   }
 </style>

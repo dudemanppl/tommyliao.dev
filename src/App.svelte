@@ -1,6 +1,6 @@
 <script>
   import { afterUpdate } from "svelte";
-  import { currentSection, sections } from "./stores";
+  import { currentSection, sections } from "./stores/index";
   import Nav from "./Nav/index.svelte";
   import Landing from "./Landing/index.svelte";
   import Projects from "./Projects/index.svelte";
