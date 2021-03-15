@@ -1,6 +1,6 @@
 import { sections } from "./sections";
 import { currentSection } from "./currentSection";
-import { sectionIntersectionRatios } from "./sectionIntersectionRatios";
 import { observer } from "./observer";
+import { sectionIntersectionRatios } from "./sectionIntersectionRatios";
 
-export { sections, currentSection, sectionIntersectionRatios, observer };
+export { sections, currentSection, observer, sectionIntersectionRatios };

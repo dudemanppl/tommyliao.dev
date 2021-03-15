@@ -10,7 +10,7 @@ const createCurrentSection = () => {
   const setCurrentSection = (sectionName) => {
     set(sectionName);
 
-    const top = allSections[sectionName].offsetTop;
+    const top = allSections[sectionName].element.offsetTop;
     window.scroll({ top, behavior: "smooth" });
   };
 

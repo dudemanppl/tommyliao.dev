@@ -5,14 +5,13 @@
   export let label = "";
 
   $: current = $currentSection === label;
-
-  const scrollToSection = () => {
-    setCurrentSection(label);
-  };
 </script>
 
 <li>
-  <button on:click|preventDefault={scrollToSection} class:current>
+  <button
+    on:click|preventDefault={() => setCurrentSection(label)}
+    class:current
+  >
     {label}
   </button>
 </li>

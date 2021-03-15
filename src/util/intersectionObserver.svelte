@@ -1,22 +1,42 @@
 <script>
-  import { onMount } from "svelte";
-  import { sections, observer } from "../stores/index.js";
-  const { updateSections } = sections;
+  import { onMount, beforeUpdate } from "svelte";
+  import { sections, observer, currentSection } from "../stores/index.js";
+  // const { setCurrentSection } = currentSection;
 
   export let sectionName;
 
   let elementToObserve;
+  let currRatio;
+
+  beforeUpdate(() => {
+    if ($currentSection === sectionName) {
+      // console.log($sections[$currentSection]);
+    }
+    // const newRatio = $sections[sectionName];
+
+    // console.log($sections[sectionName]);
+
+    // if (newRatio > currRatio) {
+    //   setCurrentSection(sectionName);
+    // }
+
+    // currRatio = newRatio;
+  });
 
   onMount(() => {
     const currElemPxFromTop = Math.abs(elementToObserve.getClientRects()[0].y);
 
-    const min =
-      !$sections.min || $sections.min[1] > currElemPxFromTop
+    const currentElemInView =
+      !$sections.currentElemInView ||
+      $sections.currentElemInView[1] > currElemPxFromTop
         ? [sectionName, currElemPxFromTop]
-        : $sections.min;
+        : $sections.currentElemInView;
 
     $observer.observe(elementToObserve);
-    updateSections({ [sectionName]: elementToObserve, min });
+    sections.updateSections({
+      [sectionName]: { element: elementToObserve },
+      currentElemInView,
+    });
 
     return () => $observer.unobserve(elementToObserve);
   });

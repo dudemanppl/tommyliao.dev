@@ -3,13 +3,12 @@ import { writable } from "svelte/store";
 const createSectionIntersectionRatios = () => {
   const { subscribe, update } = writable({});
 
-  const updateIntersectionRatios = (newRatios) => {
+  const updateSectionIntersectonRatios = (newIntersectionRatio) =>
     update((intersectionRatios) => {
-      return { ...intersectionRatios, ...newRatios };
+      return { ...intersectionRatios, ...newIntersectionRatio };
     });
-  };
 
-  return { subscribe, updateIntersectionRatios };
+  return { subscribe, updateSectionIntersectonRatios };
 };
 
 export const sectionIntersectionRatios = createSectionIntersectionRatios();

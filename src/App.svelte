@@ -7,7 +7,7 @@
   import IntersectionObserver from "./util/intersectionObserver.svelte";
 
   afterUpdate(() => {
-    currentSection.setCurrentSection($sections.min[0]);
+    currentSection.setCurrentSection($sections.currentElemInView[0]);
   });
 </script>
 
