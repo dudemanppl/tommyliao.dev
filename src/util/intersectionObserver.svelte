@@ -14,7 +14,7 @@
     }
     // const newRatio = $sections[sectionName];
 
-    // console.log($sections[sectionName]);
+    console.log($sections[sectionName]);
 
     // if (newRatio > currRatio) {
     //   setCurrentSection(sectionName);
@@ -34,7 +34,7 @@
 
     $observer.observe(elementToObserve);
     sections.updateSections({
-      [sectionName]: { element: elementToObserve },
+      [sectionName]: elementToObserve,
       currentElemInView,
     });
 
