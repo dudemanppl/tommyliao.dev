@@ -23,7 +23,5 @@ ul {
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  background: grey;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }

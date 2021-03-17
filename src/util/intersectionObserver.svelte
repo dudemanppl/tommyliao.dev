@@ -1,36 +1,49 @@
 <script>
-  import { onMount } from "svelte";
-  import { currentSection, sections } from "../stores.js";
+  import { onMount, afterUpdate } from "svelte";
+  import {
+    sections,
+    observer,
+    currentSection,
+    sectionIntersectionRatios,
+    scrolledTo,
+  } from "../stores/index.js";
   const { setCurrentSection } = currentSection;
-  const { addSection } = sections;
 
   export let sectionName;
-  export let cb = () => {};
 
-  let observer;
-  let childElement;
+  let elementToObserve, currRatio;
 
-  const handleIntersect = (entries, observer) => {
-    const [{ isIntersecting }] = entries;
+  afterUpdate(() => {
+    const newRatio = $sectionIntersectionRatios[sectionName];
 
-    if (isIntersecting) {
+    if (newRatio > currRatio && $scrolledTo) {
+      $scrolledTo = false;
       setCurrentSection(sectionName);
-      cb(entries, observer);
     }
-  };
 
-  const observerOptions = { threshold: 0.15 };
+    currRatio = newRatio;
+  });
 
   onMount(() => {
-    observer = new IntersectionObserver(handleIntersect, observerOptions);
-    observer.observe(childElement);
-    addSection({ [sectionName]: childElement });
+    const currElemPxFromTop = Math.abs(elementToObserve.getClientRects()[0].y);
 
-    return () => observer.unobserve(childElement);
+    const currentElemInView =
+      !$sections.currentElemInView ||
+      $sections.currentElemInView[1] > currElemPxFromTop
+        ? [sectionName, currElemPxFromTop]
+        : $sections.currentElemInView;
+
+    $observer.observe(elementToObserve);
+    sections.updateSections({
+      [sectionName]: elementToObserve,
+      currentElemInView,
+    });
+
+    return () => $observer.unobserve(elementToObserve);
   });
 </script>
 
-<div bind:this={childElement}>
+<div bind:this={elementToObserve} data-section={sectionName}>
   <slot />
 </div>
 

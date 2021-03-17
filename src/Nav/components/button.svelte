@@ -1,12 +1,17 @@
 <script>
-  import { currentSection } from "../../stores.js";
+  import { currentSection } from "../../stores/index.js";
+  const { setCurrentSection } = currentSection;
 
   export let label = "";
+
   $: current = $currentSection === label;
 </script>
 
 <li>
-  <button class:current>
+  <button
+    on:click|preventDefault={() => setCurrentSection(label)}
+    class:current
+  >
     {label}
   </button>
 </li>
@@ -22,7 +27,6 @@
   }
 
   button:hover,
-  button:focus,
   button.current {
     color: #3b3b3b;
     font-weight: bold;
@@ -31,18 +35,21 @@
   }
 
   button::after {
-    position: absolute;
     content: "";
-    left: -15%;
+    position: absolute;
+    right: -15%;
     width: 0;
-    height: 100%;
-    border-bottom: 3px solid black;
-    transition: width 0.15s;
+    bottom: -3px;
+    background: black;
+    height: 3px;
+    transition: width 0.2s;
   }
 
   button:hover::after,
-  button:focus::after,
+  button:active::after,
   button.current::after {
+    left: -15%;
+    right: auto;
     width: 130%;
   }
 </style>
