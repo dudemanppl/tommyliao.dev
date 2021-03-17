@@ -1,32 +1,23 @@
 <script>
-  import { onMount, afterUpdate, beforeUpdate } from "svelte";
+  import { onMount, afterUpdate } from "svelte";
   import {
     sections,
     observer,
     currentSection,
     sectionIntersectionRatios,
+    scrolledTo,
   } from "../stores/index.js";
   const { setCurrentSection } = currentSection;
 
   export let sectionName;
 
-  let elementToObserve, currRatio, hasBeenScrolledTo;
-
-  beforeUpdate(() => {
-    const currentSectionInView =
-      $sectionIntersectionRatios[$currentSection] === 1;
-
-    if (currentSectionInView) {
-      hasBeenScrolledTo = true;
-    }
-  });
+  let elementToObserve, currRatio;
 
   afterUpdate(() => {
     const newRatio = $sectionIntersectionRatios[sectionName];
 
-    if (newRatio > currRatio && hasBeenScrolledTo) {
-      console.log("nice");
-      hasBeenScrolledTo = false;
+    if (newRatio > currRatio && $scrolledTo) {
+      $scrolledTo = false;
       setCurrentSection(sectionName);
     }
 

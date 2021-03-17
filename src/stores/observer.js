@@ -16,17 +16,11 @@ const handleIntersect = (
   ],
   observer
 ) => {
-  let  intersectionRatios ;
+  let intersectionRatios;
 
   sectionIntersectionRatios.subscribe(
     ($intersectionRatios) => (intersectionRatios = $intersectionRatios)
   );
-
-  // const prevRatio = intersectionRatios[observerSection];
-
-  // if (intersectionRatio > prevRatio && observerSection !== currSection) {
-  //   currentSection.setCurrentSection(observerSection);
-  // }
 
   sectionIntersectionRatios.updateSectionIntersectonRatios({
     [observerSection]: intersectionRatio,
