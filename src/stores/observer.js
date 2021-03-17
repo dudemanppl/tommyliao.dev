@@ -13,9 +13,7 @@ const handleIntersect = (
         dataset: { section: observerSection },
       },
     },
-  ],
-  observer
-) => {
+  ]) => {
   let intersectionRatios;
 
   sectionIntersectionRatios.subscribe(

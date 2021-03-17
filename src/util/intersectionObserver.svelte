@@ -1,5 +1,5 @@
 <script>
-  import { onMount, afterUpdate } from "svelte";
+  import { onMount } from "svelte";
   import {
     sections,
     observer,
@@ -13,7 +13,7 @@
 
   let elementToObserve, currRatio;
 
-  afterUpdate(() => {
+  $: {
     const newRatio = $sectionIntersectionRatios[sectionName];
 
     if (newRatio > currRatio && $scrolledTo) {
@@ -22,7 +22,7 @@
     }
 
     currRatio = newRatio;
-  });
+  }
 
   onMount(() => {
     const currElemPxFromTop = Math.abs(elementToObserve.getClientRects()[0].y);
