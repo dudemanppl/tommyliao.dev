@@ -38,12 +38,12 @@
     height: 570px;
     width: 375px;
     background: white;
-    border-radius: 20px;
+    border-radius: 15px;
     --white-shadow: rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 2px var(--white-shadow), 0 0 4px var(--white-shadow),
       0 0 8px var(--white-shadow), 0 0 16px var(--white-shadow),
       0 0 32px var(--white-shadow), 0 0 64px var(--white-shadow),
-      0 0 128px var(--white-shadow), 0 0 64px rgba(40, 40, 40, 0.2);
+      0 0 128px var(--white-shadow);
   }
 
   @media screen and (max-width: 475px), (max-height: 770px) {

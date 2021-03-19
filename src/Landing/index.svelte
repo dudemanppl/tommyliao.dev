@@ -3,7 +3,7 @@
   import Inset from "./components/inset.svelte";
 </script>
 
-<Intersection sectionName="Top">
+<Intersection sectionName="top">
   <div class="splash">
     <Inset />
     <div class="arrow" />

@@ -18,29 +18,31 @@
 
 <style>
   button {
-    font-size: 22px;
+    font-size: 32px;
     line-height: 60px;
     position: relative;
     height: 60px;
-    width: 100px;
+    width: 150px;
     margin: 0 20px;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+    transition: text-shadow 0.3s;
   }
 
   button:hover,
   button.current {
-    color: #3b3b3b;
-    font-weight: bold;
-    transition: color 0.3s;
+    text-shadow: 2px 2px rgb(100, 100, 100);
     cursor: pointer;
   }
 
-  button::after {
+  /* button::after {
     content: "";
     position: absolute;
     right: -15%;
     width: 0;
     bottom: -3px;
-    background: black;
+    background: white;
     height: 3px;
     transition: width 0.2s;
   }
@@ -51,5 +53,5 @@
     left: -15%;
     right: auto;
     width: 130%;
-  }
+  } */
 </style>

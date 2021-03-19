@@ -2,7 +2,7 @@
   import { currentSection } from "../../stores/index";
   const { setCurrentSection } = currentSection;
   const scrollToTop = () => {
-    setCurrentSection("Top", 0);
+    setCurrentSection("top", 0);
   };
 
   export let size = 60;

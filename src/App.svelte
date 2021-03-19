@@ -8,10 +8,9 @@
   } from "./stores/index";
   import Nav from "./Nav/index.svelte";
   import Landing from "./Landing/index.svelte";
-  import Projects from "./Projects/index.svelte";
-  import IntersectionObserver from "./util/intersectionObserver.svelte";
+  import Work from "./Work/index.svelte";
 
-  $: if ($sectionIntersectionRatios[$currentSection] > 0.9) {
+  $: if (Math.round($sectionIntersectionRatios[$currentSection])) {
     $scrolledTo = true;
   }
 
@@ -23,10 +22,7 @@
 <main>
   <Nav />
   <Landing />
-  <Projects />
-  <IntersectionObserver sectionName="About Me"
-    ><div style="width:100%; height: 100vh;" /></IntersectionObserver
-  >
+  <Work />
 </main>
 
 <style>
