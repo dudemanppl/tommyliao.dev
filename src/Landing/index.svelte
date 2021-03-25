@@ -1,12 +1,17 @@
 <script>
   import Intersection from "../util/intersectionObserver.svelte";
   import Inset from "./components/inset.svelte";
+
+  import { currentSection } from "../stores/index";
 </script>
 
 <Intersection sectionName="top">
   <div class="splash">
     <Inset />
-    <div class="arrow" />
+    <div
+      on:click={() => currentSection.setCurrentSection("work")}
+      class="arrow"
+    />
   </div>
 </Intersection>
 
@@ -45,10 +50,10 @@
     border-top: 3px solid white;
     border-right: 3px solid white;
     animation: bounce 2s infinite;
+    cursor: pointer;
   }
 
   @media all and (max-width: 700px), (max-height: 800px) {
-
     @keyframes bounce {
       0%,
       20%,

@@ -4,7 +4,7 @@
 
 <div class="inset">
   <div class="info">
-    <div class="name"><span class="first-name">Tommy</span> Liao</div>
+    <div class="name">Tommy Liao</div>
     <div class="descrip">full stack developer</div>
     <Icons />
   </div>
@@ -17,7 +17,7 @@
 <style>
   .inset {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     color: white;
   }
 
@@ -29,19 +29,16 @@
   }
 
   .name {
-    font-weight: 800;
+    font-family: "Petrona", serif;
+    font-weight: 500;
     font-size: 100px;
     line-height: 100px;
-    letter-spacing: -4px;
-  }
-
-  .first-name {
-    letter-spacing: -8px;
+    letter-spacing: -6px;
   }
 
   .descrip {
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   img {

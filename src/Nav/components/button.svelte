@@ -17,16 +17,32 @@
 </li>
 
 <style>
-  button {
+  button:hover,
+  button:focus {
+    top: -2px;
+    left: -2px;
+    outline: 0;
+    color: white;
+  }
+
+  button,
+  button.current {
     font-family: "Petrona", serif;
+    font-weight: 600;
     font-size: 30px;
     position: relative;
     height: 60px;
     width: auto;
     margin: 1vh 20px;
-    color: white;
+    color: #f8f4f0;
     cursor: pointer;
+    top: 0;
+    left: 0;
+    transition: top 0.2s, left 0.2s, color 0.2s;
+  }
 
+  button.current {
+    color: white;
   }
 
   button::after {
@@ -34,14 +50,12 @@
     position: absolute;
     right: -10%;
     width: 0;
-    bottom: 8px;
+    bottom: 10px;
     background: white;
     height: 3px;
     transition: width 0.2s;
   }
 
-  button:hover::after,
-  button:active::after,
   button.current::after {
     left: -10%;
     right: auto;
