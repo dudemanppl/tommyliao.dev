@@ -18,7 +18,6 @@
     width: 100%;
     height: 60px;
     display: flex;
-    /* background: white; */
     position: fixed;
     flex-direction: row;
     z-index: 10;
@@ -27,6 +26,7 @@
   ul {
     width: 100%;
     justify-content: flex-end;
+    padding-right: 1.5%;
   }
 
   @media screen and (max-width: 500px), (max-height: 570px) {

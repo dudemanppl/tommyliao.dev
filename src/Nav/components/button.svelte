@@ -18,30 +18,23 @@
 
 <style>
   button {
-    font-size: 32px;
+    font-family: "Petrona", serif;
+    font-size: 30px;
     line-height: 60px;
     position: relative;
     height: 60px;
-    width: 150px;
-    margin: 0 20px;
-    font-weight: bold;
+    width: auto;
+    margin: 20px;
     color: white;
-    text-transform: capitalize;
-    transition: text-shadow 0.3s;
-  }
-
-  button:hover,
-  button.current {
-    text-shadow: 2px 2px rgb(100, 100, 100);
     cursor: pointer;
   }
 
-  /* button::after {
+  button::after {
     content: "";
     position: absolute;
-    right: -15%;
+    right: -10%;
     width: 0;
-    bottom: -3px;
+    bottom: 8px;
     background: white;
     height: 3px;
     transition: width 0.2s;
@@ -50,8 +43,8 @@
   button:hover::after,
   button:active::after,
   button.current::after {
-    left: -15%;
+    left: -10%;
     right: auto;
-    width: 130%;
-  } */
+    width: 120%;
+  }
 </style>
