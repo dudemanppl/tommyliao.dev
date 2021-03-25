@@ -5,17 +5,14 @@ const observerOptions = {
   threshold: [0.05, 0.1, 0.15, 0.2, 0.3, 1],
 };
 
-const handleIntersect = (
-  [
-    {
-      intersectionRatio,
-      target: {
-        dataset: { section: observerSection },
-      },
+const handleIntersect = ([
+  {
+    intersectionRatio,
+    target: {
+      dataset: { section: observerSection },
     },
-  ],
-  observer
-) => {
+  },
+]) => {
   let intersectionRatios;
 
   sectionIntersectionRatios.subscribe(
