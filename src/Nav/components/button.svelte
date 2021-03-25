@@ -18,13 +18,14 @@
 
 <style>
   button {
-    font-size: 24px;
+    font-family: "Petrona", serif;
+    font-size: 30px;
     line-height: 60px;
     position: relative;
     height: 60px;
+
     width: auto;
     margin: 20px;
-    font-weight: bold;
     color: white;
     transition: text-shadow 0.2s;
   }
@@ -43,7 +44,7 @@
     bottom: 8px;
     background: white;
     height: 3px;
-    box-shadow: 2px 2px 1px rgb(100, 100, 100);
+    box-shadow: 1px 1px 3px rgb(100, 100, 100);
     transition: width 0.2s;
   }
 
