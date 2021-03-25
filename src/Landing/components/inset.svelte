@@ -3,50 +3,102 @@
 </script>
 
 <div class="inset">
+  <div class="info">
+    <div class="name"><span class="first-name">Tommy</span> Liao</div>
+    <div class="descrip">full stack developer</div>
+    <Icons />
+  </div>
   <img
     src="https://dudemanppl.s3-us-west-1.amazonaws.com/41962026_1898602030162209_5312635139379953664_o+(1).jpg"
     alt="Me at Joshua Tree National Park at sunset"
   />
-
-  <div class="name">Tommy Liao</div>
-  <div class="descrip">Full Stack Developer</div>
-  <Icons />
 </div>
 
 <style>
-  img {
-    height: 375px;
-    width: 375px;
-    border-radius: 20px 20px 0 0;
-    margin-bottom: 15px;
+  .inset {
+    display: flex;
+    align-items: flex-end;
+    color: white;
+  }
+
+  .info {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   .name {
-    font-weight: bold;
-    font-style: italic;
-    font-size: 50px;
+    font-weight: 800;
+    font-size: 100px;
+    line-height: 100px;
+    letter-spacing: -4px;
   }
+
+  .first-name {
+    letter-spacing: -8px;
+  }
+
   .descrip {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 500;
   }
 
-  .inset {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 570px;
-    width: 375px;
-    background: white;
-    border-radius: 15px;
-    --white-shadow: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 2px var(--white-shadow), 0 0 4px var(--white-shadow),
-      0 0 8px var(--white-shadow), 0 0 16px var(--white-shadow),
-      0 0 32px var(--white-shadow), 0 0 64px var(--white-shadow),
-      0 0 128px var(--white-shadow);
+  img {
+    height: 450px;
+    width: 450px;
+    border-radius: 3px;
   }
 
-  @media screen and (max-width: 475px), (max-height: 770px) {
+  @media screen and (max-width: 1280px) {
+    .name {
+      font-size: 80px;
+      line-height: 84px;
+    }
+    .descrip {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .inset {
+      flex-direction: column-reverse;
+    }
+    .info {
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .inset {
+      align-items: center;
+    }
+
+    img {
+      height: 90%;
+      width: 90%;
+    }
+
+    .info {
+      margin-top: 5px;
+    }
+
+    .name {
+      font-size: 50px;
+      line-height: 48px;
+      letter-spacing: -2px;
+    }
+
+    .first-name {
+      letter-spacing: -4px;
+    }
+
+    .descrip {
+      font-size: 18px;
+    }
+  }
+
+  /* @media screen and (max-width: 475px), (max-height: 770px) {
     img {
       height: 250px;
       width: 250px;
@@ -62,5 +114,5 @@
       width: 250px;
       border-radius: 10px;
     }
-  }
+  } */
 </style>

@@ -22,7 +22,7 @@
     flex-direction: row;
     z-index: 10;
   }
-  
+
   ul {
     width: 100%;
     justify-content: flex-end;

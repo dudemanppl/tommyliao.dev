@@ -52,18 +52,26 @@
   .icons {
     display: flex;
   }
-  svg {
-    height: 100%;
-  }
+
   .icon {
     height: 40px;
     width: 40px;
-    margin: 5px;
+    margin-left: 8px;
     transition: opacity 0.2s;
+    position: relative;
+    background-color: white;
   }
 
   .icon:hover {
     opacity: 0.75;
+  }
+
+  .linkedin .icon {
+    border-radius: 3px;
+  }
+
+  .github .icon {
+    border-radius: 50%;
   }
 
   .github:hover {
@@ -92,4 +100,6 @@
     height: 80%;
     transform: translate(4px, 4px);
   }
+
+  /*
 </style>

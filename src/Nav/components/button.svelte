@@ -20,13 +20,13 @@
   button {
     font-family: "Petrona", serif;
     font-size: 30px;
-    line-height: 60px;
     position: relative;
     height: 60px;
     width: auto;
-    margin: 20px;
+    margin: 1vh 20px;
     color: white;
     cursor: pointer;
+
   }
 
   button::after {

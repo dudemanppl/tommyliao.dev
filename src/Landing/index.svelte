@@ -40,20 +40,14 @@
   .arrow {
     position: absolute;
     bottom: 30px;
-    width: 35px;
-    height: 35px;
-    border-top: 4px solid white;
-    border-right: 4px solid white;
+    width: 25px;
+    height: 25px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
     animation: bounce 2s infinite;
   }
 
   @media all and (max-width: 700px), (max-height: 800px) {
-    .arrow {
-      width: 25px;
-      height: 25px;
-      border-top: 3px solid white;
-      border-right: 3px solid white;
-    }
 
     @keyframes bounce {
       0%,
