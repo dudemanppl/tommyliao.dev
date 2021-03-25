@@ -18,38 +18,40 @@
 
 <style>
   button {
-    font-size: 22px;
+    font-size: 24px;
     line-height: 60px;
     position: relative;
     height: 60px;
-    width: 100px;
-    margin: 0 20px;
+    width: auto;
+    margin: 20px;
+    font-weight: bold;
+    color: white;
+    transition: text-shadow 0.2s;
   }
 
   button:hover,
   button.current {
-    color: #3b3b3b;
-    font-weight: bold;
-    transition: color 0.3s;
+    text-shadow: 2px 2px 1px rgb(100, 100, 100);
     cursor: pointer;
   }
 
   button::after {
     content: "";
     position: absolute;
-    right: -15%;
+    right: -10%;
     width: 0;
-    bottom: -3px;
-    background: black;
+    bottom: 8px;
+    background: white;
     height: 3px;
+    box-shadow: 2px 2px 1px rgb(100, 100, 100);
     transition: width 0.2s;
   }
 
   button:hover::after,
   button:active::after,
   button.current::after {
-    left: -15%;
+    left: -10%;
     right: auto;
-    width: 130%;
+    width: 120%;
   }
 </style>
