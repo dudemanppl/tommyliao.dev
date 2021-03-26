@@ -27,7 +27,6 @@
 
   button,
   button.current {
-    font-family: "Petrona", serif;
     font-weight: 600;
     font-size: 30px;
     position: relative;
@@ -38,7 +37,8 @@
     cursor: pointer;
     top: 0;
     left: 0;
-    transition: top 0.2s, left 0.2s, color 0.2s;
+    transition: top 0.15s, left 0.15s, color 0.15s;
+    letter-spacing: -1px;
   }
 
   button.current {

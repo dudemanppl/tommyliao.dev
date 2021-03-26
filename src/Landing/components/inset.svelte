@@ -1,10 +1,16 @@
 <script>
   import Icons from "./icons.svelte";
+  import { currentSection } from "../../stores/index";
+
+  $: notShown = $currentSection !== "top";
 </script>
 
 <div class="inset">
   <div class="info">
-    <div class="name">Tommy Liao</div>
+    <div class="name">
+      <span class:notShown id="t">T</span>ommy
+      <span class:notShown id="l">L</span>iao
+    </div>
     <div class="descrip">full stack developer</div>
     <Icons />
   </div>
@@ -28,15 +34,28 @@
     align-items: flex-end;
   }
 
+  #t.notShown,
+  #l.notShown {
+    position: fixed;
+    top: 0;
+    left: 25px;
+    font-size: 50px;
+  }
+
+  #l.notShown {
+    left: 60px;
+  }
+
   .name {
-    font-family: "Petrona", serif;
-    font-weight: 500;
-    font-size: 100px;
-    line-height: 100px;
-    letter-spacing: -6px;
+    font-family: "Spartan", sans-serif;
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 90px;
+    letter-spacing: -7px;
   }
 
   .descrip {
+    font-family: "Overpass", sans-serif;
     font-size: 24px;
     font-weight: 400;
   }
@@ -44,13 +63,14 @@
   img {
     height: 450px;
     width: 450px;
-    border-radius: 3px;
+    border-radius: 4px;
   }
 
   @media screen and (max-width: 1280px) {
     .name {
-      font-size: 80px;
+      font-size: 70px;
       line-height: 84px;
+      letter-spacing: -3px;
     }
     .descrip {
       font-size: 20px;
@@ -78,38 +98,17 @@
 
     .info {
       margin-top: 5px;
+      align-items: center;
     }
 
     .name {
       font-size: 50px;
-      line-height: 48px;
+      line-height: 60px;
       letter-spacing: -2px;
-    }
-
-    .first-name {
-      letter-spacing: -4px;
     }
 
     .descrip {
       font-size: 18px;
     }
   }
-
-  /* @media screen and (max-width: 475px), (max-height: 770px) {
-    img {
-      height: 250px;
-      width: 250px;
-      border-radius: 10px 10px 0 0;
-    }
-
-    .name {
-      font-size: 35px;
-    }
-
-    .inset {
-      height: 420px;
-      width: 250px;
-      border-radius: 10px;
-    }
-  } */
 </style>
