@@ -6,7 +6,7 @@
 
 <nav>
   <ul>
-    <!-- <Logo /> -->
+    <Logo />
     {#each buttonLabels as label}
       <Button {label} />
     {/each}

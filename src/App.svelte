@@ -29,9 +29,34 @@
   main {
     background: linear-gradient(70deg, #51c5e8, #e8688d, #daac74, #8bee82);
     background-size: 800% 800%;
-    -webkit-animation: 10s linear infinite alternate background-color-animation;
-    -moz-animation: 10s linear infinite alternate background-color-animation;
-    animation: 10s linear infinite alternate background-color-animation;
+    -webkit-animation: 20s linear infinite alternate background-color-animation;
+    -moz-animation: 20s linear infinite alternate background-color-animation;
+    animation: 20s linear infinite alternate background-color-animation;
+  }
+
+  /* main::before {
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    animation: 1s ease bye;
+    z-index: 0;
+  } */
+
+  @keyframes bye {
+    from {
+      width: 100%;
+      height: 100%;
+      z-index: 11;
+      top: 0;
+      opacity: 1;
+    }
+    to {
+      /* top: -100%; */
+      opacity: 0;
+    }
   }
 
   @-webkit-keyframes background-color-animation {

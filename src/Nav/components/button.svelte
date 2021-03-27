@@ -37,7 +37,7 @@
     cursor: pointer;
     top: 0;
     left: 0;
-    transition: top 0.15s, left 0.15s, color 0.15s;
+    transition: top 150ms, left 150ms, color 150ms;
     letter-spacing: -1px;
   }
 
@@ -56,7 +56,8 @@
     transition: width 0.2s;
   }
 
-  button.current::after {
+  button.current::after,
+  button:focus::after {
     left: -10%;
     right: auto;
     width: 120%;

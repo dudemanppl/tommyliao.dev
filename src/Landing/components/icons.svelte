@@ -60,10 +60,19 @@
     transition: opacity 0.2s;
     position: relative;
     background-color: white;
+    top: 0;
+    left: 0;
+    transition: top 300ms, left 300ms;
   }
 
+  a:focus {
+    outline: 0;
+  }
+
+  a:focus .icon,
   .icon:hover {
-    opacity: 0.75;
+    top: -2px;
+    left: -2px;
   }
 
   .linkedin .icon {
@@ -72,10 +81,6 @@
 
   .github .icon {
     border-radius: 50%;
-  }
-
-  .github:hover {
-    opacity: 0.65;
   }
 
   .linkedin {
@@ -100,6 +105,4 @@
     height: 80%;
     transform: translate(4px, 4px);
   }
-
-  /*
 </style>

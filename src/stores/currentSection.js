@@ -2,7 +2,7 @@ import { writable } from "svelte/store";
 import { sections } from "./sections";
 
 const createCurrentSection = () => {
-  const { subscribe, set } = writable();
+  const { subscribe, set } = writable("top");
   let allSections;
 
   sections.subscribe(($sections) => (allSections = $sections));

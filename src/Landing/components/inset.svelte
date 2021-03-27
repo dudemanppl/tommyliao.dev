@@ -1,16 +1,10 @@
 <script>
   import Icons from "./icons.svelte";
-  import { currentSection } from "../../stores/index";
-
-  $: notShown = $currentSection !== "top";
 </script>
 
 <div class="inset">
   <div class="info">
-    <div class="name">
-      <span class:notShown id="t">T</span>ommy
-      <span class:notShown id="l">L</span>iao
-    </div>
+    <div class="name">Tommy Liao</div>
     <div class="descrip">full stack developer</div>
     <Icons />
   </div>
@@ -32,18 +26,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-  }
-
-  #t.notShown,
-  #l.notShown {
-    position: fixed;
-    top: 0;
-    left: 25px;
-    font-size: 50px;
-  }
-
-  #l.notShown {
-    left: 60px;
   }
 
   .name {
