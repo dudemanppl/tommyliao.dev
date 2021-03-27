@@ -3,6 +3,8 @@
   import Inset from "./components/inset.svelte";
 
   import { currentSection } from "../stores/index";
+
+  $: visible = $currentSection !== "top";
 </script>
 
 <Intersection sectionName="top">
@@ -11,6 +13,7 @@
     <div
       on:click={() => currentSection.setCurrentSection("work")}
       class="arrow"
+      class:visible
     />
   </div>
 </Intersection>
@@ -51,6 +54,12 @@
     border-right: 3px solid white;
     animation: bounce 2s infinite;
     cursor: pointer;
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+
+  .arrow.visible {
+    opacity: 0;
   }
 
   @media all and (max-width: 700px), (max-height: 800px) {
