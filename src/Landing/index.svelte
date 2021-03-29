@@ -56,6 +56,7 @@
     cursor: pointer;
     opacity: 1;
     transition: opacity 500ms;
+    transform: rotate(135deg);
   }
 
   .arrow.visible {
