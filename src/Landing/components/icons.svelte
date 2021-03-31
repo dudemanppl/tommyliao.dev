@@ -52,22 +52,35 @@
   .icons {
     display: flex;
   }
-  svg {
-    height: 100%;
-  }
+
   .icon {
     height: 40px;
     width: 40px;
-    margin: 5px;
+    margin-left: 8px;
     transition: opacity 0.2s;
+    position: relative;
+    background-color: white;
+    top: 0;
+    left: 0;
+    transition: top 300ms, left 300ms;
   }
 
+  a:focus {
+    outline: 0;
+  }
+
+  a:focus .icon,
   .icon:hover {
-    opacity: 0.75;
+    top: -2px;
+    left: -2px;
   }
 
-  .github:hover {
-    opacity: 0.65;
+  .linkedin .icon {
+    border-radius: 3px;
+  }
+
+  .github .icon {
+    border-radius: 50%;
   }
 
   .linkedin {

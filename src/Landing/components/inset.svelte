@@ -3,64 +3,96 @@
 </script>
 
 <div class="inset">
+  <div class="info">
+    <div class="name">Tommy Liao</div>
+    <div class="descrip">full stack developer</div>
+    <Icons />
+  </div>
   <img
     src="https://dudemanppl.s3-us-west-1.amazonaws.com/41962026_1898602030162209_5312635139379953664_o+(1).jpg"
     alt="Me at Joshua Tree National Park at sunset"
   />
-
-  <div class="name">Tommy Liao</div>
-  <div class="descrip">Full Stack Developer</div>
-  <Icons />
 </div>
 
 <style>
-  img {
-    height: 375px;
-    width: 375px;
-    border-radius: 20px 20px 0 0;
-    margin-bottom: 15px;
+  .inset {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+
+  .info {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   .name {
-    font-weight: bold;
-    font-style: italic;
-    font-size: 50px;
+    font-family: "Spartan", sans-serif;
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 90px;
+    letter-spacing: -7px;
   }
+
   .descrip {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-family: "Overpass", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
   }
 
-  .inset {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 570px;
-    width: 375px;
-    background: white;
-    border-radius: 20px;
-    --white-shadow: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 2px var(--white-shadow), 0 0 4px var(--white-shadow),
-      0 0 8px var(--white-shadow), 0 0 16px var(--white-shadow),
-      0 0 32px var(--white-shadow), 0 0 64px var(--white-shadow),
-      0 0 128px var(--white-shadow), 0 0 64px rgba(40, 40, 40, 0.2);
+  img {
+    height: 450px;
+    width: 450px;
+    border-radius: 4px;
   }
 
-  @media screen and (max-width: 475px), (max-height: 770px) {
+  @media screen and (max-width: 1280px) {
+    .name {
+      font-size: 70px;
+      line-height: 84px;
+      letter-spacing: -3px;
+    }
+    .descrip {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .inset {
+      flex-direction: column-reverse;
+    }
+    .info {
+      margin-top: 15px;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .inset {
+      align-items: center;
+    }
+
     img {
-      height: 250px;
-      width: 250px;
-      border-radius: 10px 10px 0 0;
+      height: 90%;
+      width: 90%;
+    }
+
+    .info {
+      margin-top: 5px;
+      align-items: center;
     }
 
     .name {
-      font-size: 35px;
+      font-size: 50px;
+      line-height: 60px;
+      letter-spacing: -2px;
+      text-align: center;
     }
 
-    .inset {
-      height: 420px;
-      width: 250px;
-      border-radius: 10px;
+    .descrip {
+      font-size: 18px;
     }
   }
 </style>

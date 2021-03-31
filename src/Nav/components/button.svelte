@@ -17,39 +17,49 @@
 </li>
 
 <style>
-  button {
-    font-size: 22px;
-    line-height: 60px;
-    position: relative;
-    height: 60px;
-    width: 100px;
-    margin: 0 20px;
+  button:hover,
+  button:focus {
+    top: -2px;
+    left: -2px;
+    outline: 0;
+    color: white;
   }
 
-  button:hover,
+  button,
   button.current {
-    color: #3b3b3b;
-    font-weight: bold;
-    transition: color 0.3s;
+    font-weight: 600;
+    font-size: 30px;
+    position: relative;
+    height: 60px;
+    width: auto;
+    margin: 1vh 20px;
+    color: #f8f4f0;
     cursor: pointer;
+    top: 0;
+    left: 0;
+    transition: top 150ms, left 150ms, color 150ms;
+    letter-spacing: -1px;
+  }
+
+  button.current {
+    color: white;
   }
 
   button::after {
     content: "";
     position: absolute;
-    right: -15%;
+    right: -10%;
     width: 0;
-    bottom: -3px;
-    background: black;
+    bottom: 10px;
+    background: white;
     height: 3px;
     transition: width 0.2s;
   }
 
-  button:hover::after,
-  button:active::after,
-  button.current::after {
-    left: -15%;
+  button.current::after,
+  button:focus::after {
+    left: -10%;
     right: auto;
-    width: 130%;
+    width: 120%;
   }
 </style>

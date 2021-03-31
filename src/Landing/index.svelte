@@ -1,12 +1,20 @@
 <script>
   import Intersection from "../util/intersectionObserver.svelte";
   import Inset from "./components/inset.svelte";
+
+  import { currentSection } from "../stores/index";
+
+  $: visible = $currentSection !== "top";
 </script>
 
-<Intersection sectionName="Top">
+<Intersection sectionName="top">
   <div class="splash">
     <Inset />
-    <div class="arrow" />
+    <div
+      on:click={() => currentSection.setCurrentSection("work")}
+      class="arrow"
+      class:visible
+    />
   </div>
 </Intersection>
 
@@ -40,21 +48,22 @@
   .arrow {
     position: absolute;
     bottom: 30px;
-    width: 35px;
-    height: 35px;
-    border-top: 4px solid white;
-    border-right: 4px solid white;
+    width: 25px;
+    height: 25px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
     animation: bounce 2s infinite;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 500ms;
+    transform: rotate(135deg);
+  }
+
+  .arrow.visible {
+    opacity: 0;
   }
 
   @media all and (max-width: 700px), (max-height: 800px) {
-    .arrow {
-      width: 25px;
-      height: 25px;
-      border-top: 3px solid white;
-      border-right: 3px solid white;
-    }
-
     @keyframes bounce {
       0%,
       20%,

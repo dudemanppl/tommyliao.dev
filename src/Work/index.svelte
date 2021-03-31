@@ -2,7 +2,7 @@
   import Intersection from "../util/intersectionObserver.svelte";
 </script>
 
-<Intersection sectionName="Projects">
+<Intersection sectionName="work">
   <div class="test">nice</div>
 </Intersection>
 
