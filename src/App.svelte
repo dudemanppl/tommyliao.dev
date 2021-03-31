@@ -99,7 +99,7 @@
       opacity: 0;
       color: transparent;
       border-color: transparent;
-      top: 40%;
+      top: 45%;
     }
   }
 

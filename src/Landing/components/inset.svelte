@@ -64,6 +64,7 @@
       flex-direction: column-reverse;
     }
     .info {
+      margin-top: 15px;
       margin-right: 0;
     }
   }
@@ -87,6 +88,7 @@
       font-size: 50px;
       line-height: 60px;
       letter-spacing: -2px;
+      text-align: center;
     }
 
     .descrip {
