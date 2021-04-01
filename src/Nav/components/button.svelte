@@ -5,13 +5,15 @@
   export let label = "";
 
   $: current = $currentSection === label;
+
+  const buttonClick = ({ target: button }) => {
+    setCurrentSection(label);
+    button.blur();
+  };
 </script>
 
 <li>
-  <button
-    on:click|preventDefault={() => setCurrentSection(label)}
-    class:current
-  >
+  <button on:click={buttonClick} class:current>
     {label}
   </button>
 </li>

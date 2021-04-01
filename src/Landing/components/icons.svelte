@@ -65,10 +65,6 @@
     transition: top 300ms, left 300ms;
   }
 
-  a:focus {
-    outline: 0;
-  }
-
   a:focus .icon,
   .icon:hover {
     top: -2px;

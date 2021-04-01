@@ -29,9 +29,9 @@
     font-weight: 700;
     color: white;
     font-size: 80px;
+    line-height: 80px;
     cursor: pointer;
     transition: top 200ms, left 200ms;
-    outline: 0;
   }
 
   button:hover,
